@@ -10,6 +10,7 @@ d:libpcre
 d:libfm-extra
 d:pciutils
 d:expat
+d:cpk
 d:stella
 d:ed
 d:xorg-xcb-util-xrm
@@ -75,6 +76,9 @@ f:5cec7d32541cee6e4f4e2ab8e2b0fc9a:pciutils/.md5sum
 f:a747b2a72dd21b3a9ee8fe311a485a2d:expat/.footprint
 f:f91b85f7c58ca3efd477e7169e3d7899:expat/Pkgfile
 f:765bc701e509514a611474680e321851:expat/.md5sum
+f:67b8eb8b649909e0a49df73f39ca23b3:cpk/.footprint
+f:57fcae1b798490dab466789db3c70ced:cpk/Pkgfile
+f:2d04c8142ce0defef4110d9d08004cb8:cpk/.md5sum
 f:33f021ae8773decb27d0461028bb88ce:stella/.footprint
 f:b9c0e9bbd62a1bd707d2d53a6fcdd546:stella/post-install
 f:75d666cbab1ee6bf8acf8c1e8ecdd724:stella/Pkgfile

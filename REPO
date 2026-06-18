@@ -23,6 +23,7 @@ d:kbd
 d:util-linux
 d:libwebp
 d:usbutils
+d:prt-get
 d:llvm
 d:python3
 d:portdbc
@@ -133,6 +134,11 @@ f:0345c95004e4ce9329a157e612737360:usbutils/usb.ids.xz
 f:7d23bc565916ae465d24ba3c6d595ba8:usbutils/.footprint
 f:7a5cd743efe498ab6153f43e2c374332:usbutils/Pkgfile
 f:31a594cd76368f8c44fc4a1180556336:usbutils/.md5sum
+f:077fea960d8a490412eed744ce9bcc40:prt-get/.footprint
+f:022e247d8f094dfd60439cd26443cb5f:prt-get/prt-get.conf
+f:ac750b56369121ca6aad64dd4c03671b:prt-get/prt-get.aliases
+f:479aa4f212dc8e47475b99758f3d66b1:prt-get/Pkgfile
+f:7a47de3cab8f72173643a406b3fc593c:prt-get/.md5sum
 f:700c9da1489f6413ae4c86eab03d6cf4:llvm/.footprint
 f:05612be5a6ad85d61b69251cdfd9608e:llvm/Pkgfile
 f:c8c8bb0d22830e23df525cc295a3c83b:llvm/.md5sum

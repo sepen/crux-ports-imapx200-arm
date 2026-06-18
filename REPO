@@ -90,9 +90,8 @@ f:80e849824bbe614b2a87b956bf7fa46a:xorg-xcb-util-xrm/.footprint
 f:fba1f3f01dbded60441de1a65b7d8e04:xorg-xcb-util-xrm/Pkgfile
 f:df300b56f70767921b1bc6c6e44745f1:xorg-xcb-util-xrm/.md5sum
 f:46e48b7a08d665a4cb310d40d8933939:fakeroot/.footprint
-f:5fba0b541b5af39d804265223fda525c:fakeroot/silence-dlerror.patch
-f:e53a657efe0f396915bdcb3cf34007f8:fakeroot/Pkgfile
-f:c6cc499014a18b13b566de1f8c7d2f07:fakeroot/.md5sum
+f:c7d0f5a45f79481a80fed2f76f6e9737:fakeroot/Pkgfile
+f:05f9e258413f79347746d97c47899a7f:fakeroot/.md5sum
 f:ba81cc735ec2d4e13a1341a7adab1b81:wpa_supplicant/.footprint
 f:d716495fa71fbf6f8aca3075c8706af5:wpa_supplicant/wlan
 f:94eda9e510358f6fc9e6033048cc05de:wpa_supplicant/README

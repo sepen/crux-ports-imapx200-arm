@@ -1,0 +1,50 @@
+# Description: The GNU Compiler Collection
+# URL: http://gcc.gnu.org
+# Maintainer: Jose Beneyto, sepen at crux-arm dot nu
+# Depends on: zlib gcc48-libmpc
+
+name=gcc48
+version=4.8.5
+release=1
+source=(ftp://gcc.gnu.org/pub/gcc/releases/gcc-$version/gcc-$version.tar.bz2
+        gcc-nocheck-fixincludes.patch gcc-$version-gnueabihf.patch)
+
+build() {
+    patch -d gcc-$version -p1 -i $SRC/gcc-nocheck-fixincludes.patch
+    patch -d gcc-$version -p1 -i $SRC/gcc-$version-gnueabihf.patch
+
+    mkdir build
+    cd build
+
+    unset CFLAGS CPPFLAGS LDFLAGS
+    export CXXFLAGS="-std=gnu++03"
+
+    ../gcc-$version/configure \
+        --prefix=/usr/gcc48 \
+	--build=arm-unknown-linux-gnueabihf \
+	--with-arch=armv6 \
+	--with-fpu=vfp \
+	--with-mode=arm \
+	--with-float=hard \
+	--with-gmp=/usr/gcc48 \
+	--with-mpfr=/usr/gcc48 \
+	--with-mpc=/usr/gcc48 \
+	--enable-languages=c,c++ \
+	--disable-multilib \
+	--disable-nls \
+	--disable-libsanitizer \
+	--disable-libmpx \
+	--disable-libvtv \
+	--disable-libquadmath \
+	--disable-libatomic \
+	--disable-bootstrap \
+	--with-x=no \
+	--with-pkgversion="CRUX-ARM"
+
+    make -j1 all-gcc
+    make -j1 all-target-libgcc
+    make -j1 DESTDIR=$PKG install-gcc
+    make -j1 DESTDIR=$PKG install-target-libgcc
+
+    rm -rf $PKG/usr/gcc48/share
+}

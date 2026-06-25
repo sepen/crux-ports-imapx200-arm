@@ -1,6 +1,7 @@
 d:man-pages
 d:menu-cache
 d:mlocate
+d:httpup
 d:pcmanfm
 d:wireless-tools
 d:ca-certificates
@@ -28,6 +29,7 @@ d:llvm
 d:python3
 d:portdbc
 d:xterm
+d:ports
 d:mesa3d
 d:iptables
 d:libfm
@@ -42,6 +44,9 @@ f:00947fd6d4e8c1316d4a7ff33b08b64e:mlocate/.footprint
 f:ba81e63d0d15d630e5feaecb066b202c:mlocate/updatedb.conf
 f:ad6e69ae0a71b5bae43cd255e9167ff0:mlocate/Pkgfile
 f:abce08aa7b0ec249333f60328d325724:mlocate/.md5sum
+f:244d80213b48c8b5a5aca4c186f01f3d:httpup/.footprint
+f:df13c92747feac0d2c18bd8665d42767:httpup/Pkgfile
+f:de67ae098a8f8e3cb85dcf581e9a7f1e:httpup/.md5sum
 f:6e88732c3fa18b7347973e4393da6ab1:pcmanfm/.footprint
 f:b9c0e9bbd62a1bd707d2d53a6fcdd546:pcmanfm/post-install
 f:343a98a2d33f973dae19bd81a918d936:pcmanfm/Pkgfile
@@ -135,10 +140,10 @@ f:7d23bc565916ae465d24ba3c6d595ba8:usbutils/.footprint
 f:7a5cd743efe498ab6153f43e2c374332:usbutils/Pkgfile
 f:31a594cd76368f8c44fc4a1180556336:usbutils/.md5sum
 f:077fea960d8a490412eed744ce9bcc40:prt-get/.footprint
-f:022e247d8f094dfd60439cd26443cb5f:prt-get/prt-get.conf
+f:38124e30ec3f75a2fa89757b4c0733a0:prt-get/prt-get.conf
 f:ac750b56369121ca6aad64dd4c03671b:prt-get/prt-get.aliases
 f:479aa4f212dc8e47475b99758f3d66b1:prt-get/Pkgfile
-f:7a47de3cab8f72173643a406b3fc593c:prt-get/.md5sum
+f:3d5dbbf41303e750e4a3eab67daea9c4:prt-get/.md5sum
 f:700c9da1489f6413ae4c86eab03d6cf4:llvm/.footprint
 f:05612be5a6ad85d61b69251cdfd9608e:llvm/Pkgfile
 f:c8c8bb0d22830e23df525cc295a3c83b:llvm/.md5sum
@@ -152,6 +157,16 @@ f:c139b01a65075a67737c22c042963ca6:portdbc/.md5sum
 f:9342607c12e72d63c0b7abfe7d2a4da0:xterm/.footprint
 f:5a1c7eff31dc691f5d494f04a0b23ed9:xterm/Pkgfile
 f:f94f9e07099f622ce0853e4b04c29eb8:xterm/.md5sum
+f:ca6c61c26966a4535e19e5df020163e8:ports/opt-arm.rsync
+f:bd5b79b497f366b6b87e05e75d3fd3db:ports/.footprint
+f:eded5385d3637f1918a82f4409abc64a:ports/opt.rsync
+f:50fce84f0327ee5c100f66594024b5f2:ports/contrib.rsync.inactive
+f:8cacb09981058a7012d2ec665907a57b:ports/Pkgfile
+f:f86c5b27a36bfc161d9c5f07d3997455:ports/xorg-arm.rsync
+f:c24101073a06fc58a02c99bf5d56bea7:ports/xorg.rsync
+f:faedd8944bd5ecc397f73bf73bd624d4:ports/core.rsync
+f:3136e8800bcf1242923d48913da9cde0:ports/.md5sum
+f:7db07c243cf80a2fe71364555e234901:ports/core-arm.rsync
 f:855ae854257fdd970708e8d0b313c6ec:mesa3d/.footprint
 f:dd995d4d49a1e348b6acb6b89b966984:mesa3d/Pkgfile
 f:6c161f67ac9bb9c3e27bb4adabc93bfe:mesa3d/.md5sum

@@ -1,8 +1,0 @@
-#
-# /etc/ports/imapx200.httpup: Unofficial CRUX-ARM port overlay for devices powered by the IMAPX200 processor
-#
-
-ROOT_DIR=/usr/ports/imapx200
-URL=https://raw.githubusercontent.com/sepen/crux-ports-arm-imapx200/main/
-
-# End of file

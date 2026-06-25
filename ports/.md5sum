@@ -1,0 +1,9 @@
+50fce84f0327ee5c100f66594024b5f2  contrib.rsync.inactive
+7db07c243cf80a2fe71364555e234901  core-arm.rsync
+faedd8944bd5ecc397f73bf73bd624d4  core.rsync
+d5b2a2787f0cff6d723d991d8eedb7eb  imapx200-arm.httpup
+ca6c61c26966a4535e19e5df020163e8  opt-arm.rsync
+eded5385d3637f1918a82f4409abc64a  opt.rsync
+902e3ddb9b4930975c7edb5c3c749c8c  ports-1.6.tar.gz
+f86c5b27a36bfc161d9c5f07d3997455  xorg-arm.rsync
+c24101073a06fc58a02c99bf5d56bea7  xorg.rsync

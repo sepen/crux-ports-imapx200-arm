@@ -1,0 +1,19 @@
+# Description: CRUX ports system tools
+# URL: http://crux.nu
+# Maintainer: Jose Beneyto, sepen at crux dot nu
+# Depends on: httpup rsync
+
+name=ports
+version=1.6
+release=5
+source=(http://crux.nu/files/tools/ports/$name-$version.tar.gz \
+        core.rsync opt.rsync xorg.rsync contrib.rsync.inactive \
+        imapx200-arm.httpup core-arm.rsync opt-arm.rsync xorg-arm.rsync)
+
+build () {
+  cd $name-$version
+  make
+  make DESTDIR=$PKG MANDIR=/usr/share/man install
+
+  install -m 0644 $SRC/*.{rsync,httpup,inactive} $PKG/etc/ports
+}

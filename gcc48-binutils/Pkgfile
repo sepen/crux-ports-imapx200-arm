@@ -1,0 +1,31 @@
+# Description: The GNU Binutils are a collection of binary tools
+# URL: http://sources.redhat.com/binutils/
+# Maintainer: Jose Beneyto, sepen at crux-arm dot nu
+# Depends on: zlib
+
+name=gcc48-binutils
+version=2.24
+release=2
+source=(https://ftp.gnu.org/gnu/binutils/binutils-$version.tar.bz2)
+
+build() {
+    sed -i '/^SUBDIRS/s/doc//' binutils-$version/bfd/Makefile.in
+
+    mkdir build
+    cd build
+
+    ../binutils-$version/configure \
+        --prefix=/usr/gcc48 \
+        --build=arm-unknown-linux-gnueabihf \
+        --enable-shared \
+        --disable-nls \
+        --disable-werror
+
+    make
+    make DESTDIR=$PKG install
+
+    install -m 0644 ../binutils-$version/include/libiberty.h $PKG/usr/gcc48/include
+    rm -r $PKG/usr/gcc48/share
+    sed -i "s|-L$SRC[^ ]* ||g" $PKG/usr/gcc48/lib/lib{bfd,opcodes}.la
+}
+

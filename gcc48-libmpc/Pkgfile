@@ -1,0 +1,23 @@
+# Description: C library for the arithmetic of complex numbers
+# URL: http://www.multiprecision.org/
+# Maintainer: Jose Beneyto, sepen at crux-arm dot nu
+# Depends on: gcc48-libmpfr
+
+name=gcc48-libmpc
+version=1.1.0
+release=1
+source=(https://ftp.gnu.org/gnu/mpc/mpc-$version.tar.gz)
+
+build() {
+    cd mpc-$version
+
+    ./configure \
+        --prefix=/usr/gcc48 \
+        --with-gmp=/usr/gcc48 \
+        --with-mpfr=/usr/gcc48
+
+    make
+    make DESTDIR=$PKG install
+
+    rm -r $PKG/usr/gcc48/share
+}

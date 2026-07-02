@@ -1,0 +1,35 @@
+# Description: Secure SHell server and client tools
+# URL: https://www.openssh.org/
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Depends on: openssl zlib
+
+name=openssh
+version=10.3p1
+release=1
+source=(https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/$name-$version.tar.gz
+        sshd.rc)
+
+build() {
+    cd $name-$version
+
+    ./configure \
+        --prefix=/usr \
+        --libexecdir=/usr/lib/ssh \
+        --sysconfdir=/etc/ssh \
+        --with-mantype=man \
+        --mandir=/usr/share/man \
+        --with-pid-dir=/run \
+        --with-privsep-user=nobody \
+        --with-privsep-path=/var/empty \
+        --with-xauth=/usr/bin/xauth \
+        --without-zlib-version-check
+    make
+    make DESTDIR=$PKG install
+
+    install -D -m 755 $SRC/sshd.rc $PKG/etc/rc.d/sshd
+
+    rm -r $PKG/var
+
+    install -D -m 755 contrib/ssh-copy-id $PKG/usr/bin/ssh-copy-id
+    install -D -m 644 contrib/ssh-copy-id.1 $PKG/usr/share/man/man1/ssh-copy-id.1
+}

@@ -1,5 +1,6 @@
 d:gcc48-libmpc
 d:python3-setuptools
+d:meson
 d:man-pages
 d:mpdecimal
 d:menu-cache
@@ -59,6 +60,9 @@ f:e9655c514e944d3b9490b24c8305f4f5:gcc48-libmpc/.md5sum
 f:52a90ab47bf944130165838bbcef8686:python3-setuptools/.footprint
 f:de2a2111fe991ccada387856f1f469c4:python3-setuptools/Pkgfile
 f:3b56d4ac4357eac901e043ed0870edc1:python3-setuptools/.md5sum
+f:6bd0457bf13ddb31a8403544c45ac1ff:meson/.footprint
+f:fb3f00f61c176f15dc510c4dac9c87b3:meson/Pkgfile
+f:36f81a69ed099b8e7fbd4a9ad920fa1e:meson/.md5sum
 f:bc2ad577b288fa4b1af7a3f831a12f55:man-pages/.footprint
 f:52929b5b660b57c3b11724444b194ae8:man-pages/Pkgfile
 f:ecd360cc20a2c10898c2270f20458e07:man-pages/.md5sum

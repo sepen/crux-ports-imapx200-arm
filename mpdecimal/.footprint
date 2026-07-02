@@ -1,0 +1,22 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/decimal.hh
+-rw-r--r--	root/root	usr/include/mpdecimal.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libmpdec++.a
+lrwxrwxrwx	root/root	usr/lib/libmpdec++.so -> libmpdec++.so.4.0.1
+lrwxrwxrwx	root/root	usr/lib/libmpdec++.so.4 -> libmpdec++.so.4.0.1
+-rwxr-xr-x	root/root	usr/lib/libmpdec++.so.4.0.1
+-rw-r--r--	root/root	usr/lib/libmpdec.a
+lrwxrwxrwx	root/root	usr/lib/libmpdec.so -> libmpdec.so.4.0.1
+lrwxrwxrwx	root/root	usr/lib/libmpdec.so.4 -> libmpdec.so.4.0.1
+-rwxr-xr-x	root/root	usr/lib/libmpdec.so.4.0.1
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/libmpdec++.pc
+-rw-r--r--	root/root	usr/lib/pkgconfig/libmpdec.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man3/
+-rw-r--r--	root/root	usr/share/man/man3/libmpdec++.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/libmpdec.3.gz
+-rw-r--r--	root/root	usr/share/man/man3/mpdecimal.3.gz

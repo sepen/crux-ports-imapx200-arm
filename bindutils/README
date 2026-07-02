@@ -1,0 +1,19 @@
+# README for bindutils
+
+
+IMPORTANT NOTES:
+
+
+	Pinned to the 9.18.x LTS branch for the following reasons:
+
+	**OpenSSL 3.x support** was introduced in BIND 9.18, making it the minimum
+	version compatible with a modern OpenSSL build. Older branches (9.14, 9.16)
+	only support OpenSSL 1.0.x/1.1.x.
+
+	**liburcu dependency** was introduced in BIND 9.20, which requires
+	Userspace RCU (Read-Copy-Update) for its lock-free data structures.
+	This adds an extra dependency that is both unnecessary and undesirable
+	on resource-constrained embedded targets.
+
+	9.18.x therefore sits in the sweet spot: OpenSSL 3.x compatible, no
+	liburcu requirement, and actively maintained as an LTS branch.

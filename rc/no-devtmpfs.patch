@@ -1,0 +1,19 @@
+--- rc.orig	2026-07-02 18:44:57.033932300 +0000
++++ rc	2026-07-02 18:44:24.863952588 +0000
+@@ -71,7 +71,15 @@ sysinit() {
+   printinfo "Mounting /dev.."
+   UDEVOPTS="exec,nosuid,noatime,mode=0755,nr_blocks=2048,nr_inodes=16384"
+   if ! /bin/mountpoint -q /dev; then
+-    /bin/mount -n -t devtmpfs -o ${UDEVOPTS} dev /dev || { printerror "\n"; exit 1; }
++    if grep -q devtmpfs /proc/filesystems; then
++      /bin/mount -n -t devtmpfs -o ${UDEVOPTS} dev /dev || { printerror "\n"; exit 1; }
++    else
++      /bin/mount -n -t tmpfs -o ${UDEVOPTS} dev /dev || { printerror "\n"; exit 1; }
++      # since v155, udevd automatically copies /lib/udev/devices
++      # and creates /proc/{kcore,self/fd/{0,1,2}} symlinks
++      # but this depends on devtmpfs so we need to use the old style
++      /bin/cp -ar /lib/udev/devices/* /dev || { printerror "\n"; exit 1; }
++    fi
+   else
+     /bin/mount -n -o remount,${UDEVOPTS} dev /dev || { printerror "\n"; exit 1; }
+   fi

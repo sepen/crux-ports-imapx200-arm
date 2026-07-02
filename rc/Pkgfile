@@ -1,0 +1,41 @@
+# Description: BSD-like init-scripts
+# URL: https://crux.nu
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+
+name=rc
+version=2.35.1
+release=1
+source=(https://git.crux.nu/tools/rc/archive/$version.tar.gz
+        no-devtmpfs.patch)
+renames=($name-$version.tar.gz)
+
+build() {
+    cd $name
+
+    # Fall back to tmpfs for /dev when the kernel lacks CONFIG_DEVTMPFS.
+    # Manually populates /dev from /lib/udev/devices/ to compensate for the
+    # device-node seeding that udevd >= v155 no longer does without devtmpfs
+    patch -p0 -i $SRC/no-devtmpfs.patch
+
+    install -d $PKG/etc/rc.d
+
+    install -m 644 inittab $PKG/etc
+
+    install -m 755 rc $PKG/etc
+    ln -sf rc $PKG/etc/rc.multi
+    ln -sf rc $PKG/etc/rc.single
+    ln -sf rc $PKG/etc/rc.shutdown
+
+    install -m 755 rc.modules $PKG/etc
+    install -m 755 rc.local $PKG/etc
+    install -m 644 rc.conf $PKG/etc
+    install -m 644 rc.colors $PKG/etc
+
+    install -d $PKG/usr/share/man/man{4,5}
+    sed "s/#VERSION#/$version/" rc.conf.5.in > $PKG/usr/share/man/man5/rc.conf.5
+    sed "s/#VERSION#/$version/" rc.colors.4.in > $PKG/usr/share/man/man4/rc.colors.4
+
+    install -d $PKG/var/{log,lib/urandom}
+    touch $PKG/var/{log/boot,lib/urandom/seed}
+    chmod 640 $PKG/var/{log/boot,lib/urandom/seed}
+}

@@ -1,6 +1,7 @@
 d:gcc48-libmpc
 d:python3-setuptools
 d:man-pages
+d:mpdecimal
 d:menu-cache
 d:mlocate
 d:flex
@@ -28,10 +29,12 @@ d:autoconf
 d:libnl
 d:wpa_supplicant
 d:u-boot-tools
+d:libarchive
 d:openssh
 d:glibc
 d:kbd
 d:util-linux
+d:pkgutils
 d:libwebp
 d:usbutils
 d:zlib
@@ -59,6 +62,9 @@ f:3b56d4ac4357eac901e043ed0870edc1:python3-setuptools/.md5sum
 f:bc2ad577b288fa4b1af7a3f831a12f55:man-pages/.footprint
 f:52929b5b660b57c3b11724444b194ae8:man-pages/Pkgfile
 f:ecd360cc20a2c10898c2270f20458e07:man-pages/.md5sum
+f:ba9a04ce968dc2184fa8d09b0df8b4e6:mpdecimal/.footprint
+f:83fe426d8b9cd236433a5135eaa7c09d:mpdecimal/Pkgfile
+f:2c254b1ccff4dfc7ab5c33a9ab432173:mpdecimal/.md5sum
 f:1f89e0565116aa83dcb5eafbcafaca50:menu-cache/.footprint
 f:084ab41bbf1a15ff0d710146bf434714:menu-cache/Pkgfile
 f:0af5577c2daf0b26b8110cc0d87f1539:menu-cache/.md5sum
@@ -157,6 +163,9 @@ f:ac2d584a2e394d6b5a8813291c94bb7d:wpa_supplicant/.md5sum
 f:fb9c2877433d94a4af88de9e34aa7cd3:u-boot-tools/.footprint
 f:2ed3f068494bc48d7503891a5da15d7f:u-boot-tools/Pkgfile
 f:6bd0144012e7b2318857528ee178db2c:u-boot-tools/.md5sum
+f:b55d3b7eb4eb9ed8f4a113bbdfc3dd2d:libarchive/.footprint
+f:b06d1a74c4cac58c51f498087e2f4622:libarchive/Pkgfile
+f:139331e514cbdbffeaf6558e94180dcf:libarchive/.md5sum
 f:afd889791d1a958673be44500e5bebe0:openssh/.footprint
 f:54b26376003c119663c04db32a7da1db:openssh/sshd.rc
 f:d3f22cb657031050fa59130a9bde8045:openssh/Pkgfile
@@ -183,6 +192,10 @@ f:addd6a780ee3f83ef0a3d4a95eea196f:kbd/.md5sum
 f:38f1863d465d9302d148bd057ef99ea0:util-linux/.footprint
 f:3056ff444005b4e3c050e06e8b3fb86e:util-linux/Pkgfile
 f:398e77c32c7d984df1f88fcd7d770e59:util-linux/.md5sum
+f:0e1717fd1eeb62d8fce0c23682e9b337:pkgutils/.footprint
+f:b812e898306175b51d3ab11d93bbc892:pkgutils/pkgmk.conf
+f:ad80d8e6df2714b750433d9344f3ee3b:pkgutils/Pkgfile
+f:09909b0b6e3f40a2cdb74b6721115133:pkgutils/.md5sum
 f:0a0be31d8bf41bc9106b7bef211ae79f:libwebp/.footprint
 f:1c3e52d07e96ce25da366e853ffac2ca:libwebp/Pkgfile
 f:556638e25b120a8fab9a1bf4d4ce70ea:libwebp/.md5sum

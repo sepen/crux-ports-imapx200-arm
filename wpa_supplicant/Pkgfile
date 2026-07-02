@@ -4,13 +4,17 @@
 # Depends on:  openssl readline libnl dbus
 
 name=wpa_supplicant
-version=2.6
-release=2
+version=2.11
+release=1
 source=(https://w1.fi/releases/$name-$version.tar.gz
-        wlan)
+        wpa_supplicant wlan)
 
 build () {
     cd $name-$version/$name
+
+    # MACsec (IEEE 802.1X wired encryption) requires linux/if_macsec.h introduced
+    # in Linux 4.6; disable it as it is unavailable and unneeded on this target.
+    sed -i '/CONFIG_DRIVER_MACSEC_LINUX\|CONFIG_MACSEC/d' defconfig
 
     cp defconfig .config
     echo "CONFIG_READLINE=y
@@ -31,6 +35,7 @@ build () {
 
     # rc script
     install -D -m 0755 $SRC/wlan $PKG/etc/rc.d/wlan
+    install -m 0755 $SRC/wpa_supplicant $PKG/etc/rc.d
 
     # dbus
     install -d $PKG/usr/{share/dbus-1/system-services,etc/dbus-1/system.d}

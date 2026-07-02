@@ -1,12 +1,12 @@
 # Description: Userspace device management daemon
-# URL:         http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html
-# Maintainer:  CRUX System Team, core-ports at crux dot nu
+# URL:http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html
+# Maintainer: Jose Beneyto, sepen at crux-arm dot nu
 
 name=udev
 version=175
 release=1
 source=(https://mirrors.edge.kernel.org/pub/linux/utils/kernel/hotplug/$name-$version.tar.xz \
-        40-scratch.rules 99-input.rules start_udev)
+        81-crux.rules start_udev)
 
 build() {
     cd udev-$version
@@ -37,23 +37,21 @@ build() {
     mknod -m 600 $PKG/lib/udev/devices/kmsg c 1 11
     mknod -m 666 $PKG/lib/udev/devices/null c 1 3
     mknod -m 666 $PKG/lib/udev/devices/zero c 1 5
+    ln -s /proc/self/fd $PKG/lib/udev/devices/fd
+    ln -s /proc/self/fd/0 $PKG/lib/udev/devices/stdin
+    ln -s /proc/self/fd/1 $PKG/lib/udev/devices/stdout
+    ln -s /proc/self/fd/2 $PKG/lib/udev/devices/stderr
+    ln -s /proc/kcore $PKG/lib/udev/devices/core
+
+    # Disabled udev's persistent net generator to prevent automatic renaming
+    # of network interfaces based on stored MAC address mappings
+    # This keeps the kernel-assigned interface names (e.g. eth0) instead of
+    # applying udev-generated persistent names such as eth4
+    mv $PKG/lib/udev/rules.d/75-persistent-net-generator.{rules,.inactive}
 
     # Add CRUX items
     install -m 0755 -o root -g root $SRC/start_udev $PKG/sbin
-    install -m 0644 -o root -g root $SRC/*.rules $PKG/lib/udev/rules.d
-
-    # Disable some conflicting rules
-    for rule in \
-      42-qemu-usb.rules 60-cdrom_id.rules 60-persistent-alsa.rules \
-      60-persistent-serial.rules 60-persistent-storage-tape.rules \
-      60-persistent-storage.rules 60-persistent-v4l.rules \
-      61-accelerometer.rules 75-cd-aliases-generator.rules \
-      75-net-description.rules 75-persistent-net-generator.rules \
-      75-probe_mtd.rules 75-tty-description.rules 78-sound-card.rules \
-      80-drivers.rules 95-udev-late.rules; \
-      do
-        mv $PKG/lib/udev/rules.d/$rule{,.inactive}
-      done
+    install -m 0644 -o root -g root $SRC/81-crux.rules $PKG/lib/udev/rules.d
 
     # Keep udevinfo for legacy support
     mkdir -p $PKG/usr/bin

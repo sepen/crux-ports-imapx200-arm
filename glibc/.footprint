@@ -4,6 +4,7 @@ drwxr-xr-x	root/root	etc/
 -rw-r--r--	root/root	etc/ld.so.cache
 -rw-r--r--	root/root	etc/ld.so.conf
 drwxr-xr-x	root/root	etc/ld.so.conf.d/
+-rw-r--r--	root/root	etc/locale.gen
 lrwxrwxrwx	root/root	etc/localtime -> ../usr/share/zoneinfo/UTC
 -rw-r--r--	root/root	etc/nscd.conf
 -rw-r--r--	root/root	etc/nsswitch.conf
@@ -1666,6 +1667,7 @@ lrwxrwxrwx	root/root	usr/lib/libutil.so -> ../../lib/libutil.so.1
 drwxr-xr-x	root/root	usr/lib/locale/
 drwxr-xr-x	root/root	usr/sbin/
 -rwxr-xr-x	root/root	usr/sbin/iconvconfig
+-rwxr-xr-x	root/root	usr/sbin/locale-gen
 -rwxr-xr-x	root/root	usr/sbin/nscd
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/i18n/
@@ -2230,6 +2232,8 @@ drwxr-xr-x	root/root	usr/share/i18n/locales/
 -rw-r--r--	root/root	usr/share/i18n/locales/zh_SG
 -rw-r--r--	root/root	usr/share/i18n/locales/zh_TW
 -rw-r--r--	root/root	usr/share/i18n/locales/zu_ZA
+drwxr-xr-x	root/root	usr/share/locale/
+-rw-r--r--	root/root	usr/share/locale/locale.alias
 drwxr-xr-x	root/root	var/
 drwxr-xr-x	root/root	var/db/
 -rw-r--r--	root/root	var/db/Makefile

@@ -1,0 +1,15 @@
+# README for dhcpcd
+
+
+IMPORTANT
+
+  Ancient Linux kernels (~2.6.x) often lack proper SO_ATTACH_FILTER support,
+  the facility raw DHCP clients use to attach a BPF filter to a PF_PACKET
+  socket before an IP is configured.
+
+  Modern dhcpcd (9.x/10.x, after the privsep rewrite) treats a failed filter
+  attach as fatal, breaking DHCP entirely with "Protocol not available"
+  (ENOPROTOOPT) on any interface.
+  
+  dhcpcd 6.x predates that strict handling and works fine on such kernels, so
+  we pin to it here instead of patching modern dhcpcd or rebuilding the kernel.

@@ -1,0 +1,28 @@
+# Description: An RFC2131-compliant DHCP client daemon
+# URL: https://roy.marples.name/projects/dhcpcd/
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Depends on: udev
+
+name=dhcpcd
+version=6.11.5
+release=1
+source=(https://ftp2.osuosl.org/pub/blfs/conglomeration/dhcpcd/dhcpcd-6.11.5.tar.xz
+        rc.dhcpcd)
+
+build () {
+    cd $name-$version
+
+    ./configure \
+        --prefix= \
+        --libexecdir=/lib/dhcpcd \
+        --dbdir=/var/lib/dhcpcd \
+        --sysconfdir=/etc/dhcpcd \
+        --os=linux \
+        --with-hooks=
+
+    make
+    make DESTDIR=$PKG install
+
+    install -D -m 0755 $SRC/rc.dhcpcd $PKG/etc/rc.d/dhcpcd
+    chmod -R u+w $PKG
+}

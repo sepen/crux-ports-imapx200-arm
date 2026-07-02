@@ -1,52 +1,87 @@
 # Description: Python interpreter, version 3.
 # URL: https://www.python.org/
-# Maintainer: Danny Rawlins, crux at romster dot me
-# Depends on: bzip2 expat gdbm libffi mpdecimal sqlite3 xz zlib
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Depends on: bzip2 expat gdbm libffi libnsl libtirpc libxcrypt mpdecimal sqlite3 xz
 
 name=python3
-version=3.6.0
-release=2
-source=(https://www.python.org/ftp/python/$version/Python-$version.tar.xz)
+version=3.12.13
+release=1
+source=(https://www.python.org/ftp/python/${version%rc*}/Python-$version.tar.xz)
 
 build() {
     cd Python-$version
 
-    # Ensure that we are using the system copy of various libraries
-    rm -r Modules/expat
-    rm -r Modules/zlib
-    rm -r Modules/_ctypes/{darwin,libffi}*
-    rm -r Modules/_decimal/libmpdec
+    sed -i -e "s|^#.* /usr/local/bin/python|#!/usr/bin/python3|" Lib/cgi.py
+    sed -i -e "s:-j0:-j$(nproc):" Makefile.pre.in
 
-    # set OPT to the python default without -O3 or -g
-    # our CFLAGS are used as well
-    OPT="-Wall -Wstrict-prototypes -Wno-unused-result -Wsign-compare -fwrapv" \
-    ./configure --prefix=/usr \
-		--enable-shared \
-                --enable-ipv6 \
-		--enable-loadable-sqlite-extensions \
-		--with-threads \
-		--with-lto \
-		--with-system-expat \
-		--with-system-ffi \
-		--with-system-libmpdec \
-		--without-ensurepip
+    # Limit GCC's internal LTO parallelism to 4 threads.
+    # Without this, --with-lto injects a bare -flto and GCC spawns
+    # one LTO job per core during linking, easily causing OOM.
+    sed -i -e 's|-flto |-flto=4 |g' configure configure.ac
 
-    make 
-    make -j1 DESTDIR=$PKG altinstall
+    # --pgo-extended runs 448 tests (nearly the full suite) - too heavy
+    # for an embedded ARM target and known to deadlock in concurrent.futures.
+    # Plain --pgo runs ~30 tests specifically chosen for profiling coverage.
+    # -j1 avoids race conditions in tests that are not fork-safe on ARM.
+    export PROFILE_TASK="-m test -j1 --pgo \
+        -x test_gdb \
+        -x test_socket \
+        -x test_asyncio \
+        -x test_httpservers \
+        -x test_logging \
+        -x test_concurrent_futures \
+        -x test_multiprocessing_fork \
+        -x test_xmlrpc \
+        -u-network"
 
-    ln -s python${version%.*}        $PKG/usr/bin/python3
-    ln -s python${version%.*}-config $PKG/usr/bin/python3-config
-    ln -s idle${version%.*}          $PKG/usr/bin/idle3
-    ln -s pydoc${version%.*}         $PKG/usr/bin/pydoc3
-    ln -s python${version%.*}.1      $PKG/usr/share/man/man1/python3.1
-    ln -s python${version%.*}        $PKG/usr/lib/$name
+    local -x LC_ALL=C.UTF-8
+    export SETUPTOOLS_USE_DISTUTILS=stdlib
+    local -x COLUMNS=80
+    local -x PYTHONDONTWRITEBYTECODE=
 
-    rm $PKG/usr/lib/python${version%.*}/ctypes/macholib/README.ctypes
-    rm $PKG/usr/lib/python${version%.*}/distutils/README
-    rm $PKG/usr/lib/python${version%.*}/idlelib/{ChangeLog,NEWS.txt,NEWS2x.txt}
-    rm $PKG/usr/lib/python${version%.*}/idlelib/{README.txt,TODO.txt,idle_test/README.txt}
-    rm $PKG/usr/lib/python${version%.*}/lib2to3/tests/data/README
-    rm $PKG/usr/lib/python${version%.*}/site-packages/{README,README.txt}
-    rm $PKG/usr/lib/python${version%.*}/test/{data/README,sndhdrdata/README}
-    rm $PKG/usr/lib/python${version%.*}/tkinter/test/README
+    autoconf
+    autoheader
+
+    ./configure \
+        --prefix=/usr \
+        --enable-shared \
+        --enable-ipv6 \
+        --enable-loadable-sqlite-extensions \
+        --with-computed-gotos \
+        --with-dbmliborder=gdbm:ndbm \
+        --with-lto \
+        --with-pkg-config=yes \
+        --with-system-expat \
+        --with-system-libmpdec \
+        --with-tzpath=/usr/share/zoneinfo \
+        --without-ensurepip
+
+    make EXTRA_CFLAGS="$CFLAGS"
+    sed -i 's/^all:.*$/all: build_all/' Makefile
+    make -j1 EXTRA_CFLAGS="$CFLAGS" DESTDIR=$PKG TEST_MODULES=no altinstall maninstall
+
+    ln -s 2to3-${version%.*}            $PKG/usr/bin/2to3
+    ln -s python${version%.*}           $PKG/usr/bin/python3
+    ln -s python${version%.*}-config    $PKG/usr/bin/python3-config
+    ln -s idle${version%.*}             $PKG/usr/bin/idle3
+    ln -s pydoc${version%.*}            $PKG/usr/bin/pydoc3
+    ln -s python${version%.*}           $PKG/usr/lib/$name
+    ln -s python-${version%.*}.pc       $PKG/usr/lib/pkgconfig/python3.pc
+    ln -s python-${version%.*}-embed.pc $PKG/usr/lib/pkgconfig/python3-embed.pc
+
+    _pybasever=${version%.*}
+    install -dm755 $PKG/usr/lib/python${_pybasever}/Tools/{i18n,scripts}
+    install -m755 Tools/i18n/{msgfmt,pygettext}.py \
+        $PKG/usr/lib/python${_pybasever}/Tools/i18n/
+    install -m755 Tools/scripts/{README,*py} \
+        $PKG/usr/lib/python${_pybasever}/Tools/scripts/
+
+    find $PKG/usr/lib/python${version%.*} \( \
+        -iname "*README*" -o \
+        -iname "*ChangeLog*" -o \
+        -iname "*NEWS*" -o \
+        -iname "*TODO*" -o \
+        -iname "*CREDITS*" -o \
+        -iname "*HISTORY*" \) \
+        -type f -delete
 }

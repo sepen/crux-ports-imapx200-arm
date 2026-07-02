@@ -1,0 +1,27 @@
+# Description: Library providing APIs to netlink protocol based Linux kernel interfaces
+# URL: http://www.infradead.org/~tgr/libnl/
+# Maintainer: Juergen Daubert, jue at crux dot nu
+
+name=libnl
+version=3.12.0
+release=1
+source=(https://github.com/thom311/libnl/releases/download/libnl${version//./_}/$name-$version.tar.gz)
+
+build() {
+    cd $name-$version
+
+    # ILA (Identifier Locator Addressing) support requires linux/ila.h which was
+    # # introduced in Linux 4.10; remove it from the build to support older kernels.
+    sed -i '/nh_encap_ila/d' Makefile.am
+    autoreconf -fi
+
+    YACC="bison -y -Wnone" \
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-cli \
+        --disable-debug
+
+    make
+    make DESTDIR=$PKG install
+}

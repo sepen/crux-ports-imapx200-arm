@@ -3,6 +3,7 @@ d:python3-setuptools
 d:meson
 d:man-pages
 d:mpdecimal
+d:gawk
 d:menu-cache
 d:mlocate
 d:flex
@@ -69,6 +70,9 @@ f:ecd360cc20a2c10898c2270f20458e07:man-pages/.md5sum
 f:ba9a04ce968dc2184fa8d09b0df8b4e6:mpdecimal/.footprint
 f:83fe426d8b9cd236433a5135eaa7c09d:mpdecimal/Pkgfile
 f:2c254b1ccff4dfc7ab5c33a9ab432173:mpdecimal/.md5sum
+f:611bae70510b486ff4449c3db02ab246:gawk/.footprint
+f:06f55f0d7ce9973dce78a888589c5e89:gawk/Pkgfile
+f:1f0dc3fcf3fbcec305ee6f12501ff94c:gawk/.md5sum
 f:1f89e0565116aa83dcb5eafbcafaca50:menu-cache/.footprint
 f:084ab41bbf1a15ff0d710146bf434714:menu-cache/Pkgfile
 f:0af5577c2daf0b26b8110cc0d87f1539:menu-cache/.md5sum

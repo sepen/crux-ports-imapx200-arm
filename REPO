@@ -5,6 +5,7 @@ d:menu-cache
 d:mlocate
 d:flex
 d:httpup
+d:bindutils
 d:pcmanfm
 d:wireless-tools
 d:ca-certificates
@@ -71,6 +72,11 @@ f:37bf05eb1471a5d065698ccdfa8c8ad8:flex/.md5sum
 f:244d80213b48c8b5a5aca4c186f01f3d:httpup/.footprint
 f:df13c92747feac0d2c18bd8665d42767:httpup/Pkgfile
 f:de67ae098a8f8e3cb85dcf581e9a7f1e:httpup/.md5sum
+f:fd0ad59defbeeef14b2f85606ddfb22d:bindutils/.footprint
+f:c65559d1b4e50680bfcf559bc13f3f31:bindutils/README
+f:02730790111a209d1fd39743e6c6f300:bindutils/Pkgfile
+f:cff1835cbed0990fb429276f896a98ec:bindutils/.md5sum
+f:e7dbe5f98d1df6c23c73bde78ec79787:bindutils/utils.patch
 f:6e88732c3fa18b7347973e4393da6ab1:pcmanfm/.footprint
 f:b9c0e9bbd62a1bd707d2d53a6fcdd546:pcmanfm/post-install
 f:343a98a2d33f973dae19bd81a918d936:pcmanfm/Pkgfile

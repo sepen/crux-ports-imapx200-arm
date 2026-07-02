@@ -4,6 +4,7 @@ d:man-pages
 d:menu-cache
 d:mlocate
 d:flex
+d:dhcpcd
 d:httpup
 d:bindutils
 d:pcmanfm
@@ -69,6 +70,11 @@ f:abce08aa7b0ec249333f60328d325724:mlocate/.md5sum
 f:9165347c2c736b0c48b1846004e650e9:flex/.footprint
 f:929203a37a5f90d791e3fa7a4b879676:flex/Pkgfile
 f:37bf05eb1471a5d065698ccdfa8c8ad8:flex/.md5sum
+f:7de353900a5c1cdd839f6cdbf20f0cfc:dhcpcd/.footprint
+f:78dfa7e9ac506c79fa732b8e4b70e9e4:dhcpcd/README
+f:0b056dd3e5a3e1eacb7c9b38f0641e4d:dhcpcd/rc.dhcpcd
+f:99698c45c6c7dc4e88eb302ef1672a00:dhcpcd/Pkgfile
+f:180d4a12ee4ef6cc09c744552d0e9e15:dhcpcd/.md5sum
 f:244d80213b48c8b5a5aca4c186f01f3d:httpup/.footprint
 f:df13c92747feac0d2c18bd8665d42767:httpup/Pkgfile
 f:de67ae098a8f8e3cb85dcf581e9a7f1e:httpup/.md5sum

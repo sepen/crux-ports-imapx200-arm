@@ -1,0 +1,22 @@
+# Description: A tool to create language bindings
+# URL: https://www.swig.org/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libpcre2 zlib
+
+name=swig
+version=4.4.1
+release=1
+source=(https://sourceforge.net/projects/$name/files/$name/$name-$version/$name-$version.tar.gz)
+
+build () {
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+      --with-swiglibdir=/usr/share/$name/${version%.*}
+
+    make
+    make DESTDIR=$PKG install
+
+    # keep versioned dir for compatibility
+    ln -sf ${version%.*} $PKG/usr/share/$name/$version
+}

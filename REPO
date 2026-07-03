@@ -25,6 +25,7 @@ d:stella
 d:libffi
 d:ed
 d:xorg-xcb-util-xrm
+d:libtirpc
 d:gcc48-binutils
 d:fakeroot
 d:autoconf
@@ -150,6 +151,9 @@ f:ae7ebb89a47ae19521480700f0cb8819:ed/.md5sum
 f:80e849824bbe614b2a87b956bf7fa46a:xorg-xcb-util-xrm/.footprint
 f:fba1f3f01dbded60441de1a65b7d8e04:xorg-xcb-util-xrm/Pkgfile
 f:df300b56f70767921b1bc6c6e44745f1:xorg-xcb-util-xrm/.md5sum
+f:c6051782215f1c0b239b08a095036844:libtirpc/.footprint
+f:46927928c235837e1d28a34edfb60221:libtirpc/Pkgfile
+f:54e634317de093142fb0ec5334b3e2a8:libtirpc/.md5sum
 f:e317e2d1872e6d0521b93547081446ef:gcc48-binutils/.footprint
 f:8bae4596b69ab4995bd0f27132d06eb9:gcc48-binutils/Pkgfile
 f:6298573e2640af868e000b9de9dbf1cc:gcc48-binutils/.md5sum

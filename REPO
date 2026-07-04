@@ -45,11 +45,13 @@ d:kbd
 d:util-linux
 d:pkgutils
 d:ncurses
+d:libgmp
 d:libwebp
 d:usbutils
 d:zlib
 d:automake
 d:prt-get
+d:libmpfr
 d:llvm
 d:python3
 d:rc
@@ -148,6 +150,7 @@ f:70363326336a5214c77029a68a6e8ff9:libpcre/.footprint
 f:50fffb4825adedfa5bcfe97622af871e:libpcre/Pkgfile
 f:017b0d89ff74dfc7381cbd2f687ef700:libpcre/.md5sum
 f:32248d3becedd8e01816be2c3a698ecf:bash/.footprint
+f:6e6e99b1b2bf8cabb6d1e282efa0ad4f:bash/bash-5.3.15.patch.gz
 f:be5b8a1e3dd2272113e854ed0f155c47:bash/profile
 f:7e98c241871deb8278da0b0d23e28ee3:bash/Pkgfile
 f:b34fc549a24ba161962644c36c870f64:bash/.md5sum
@@ -247,6 +250,9 @@ f:09909b0b6e3f40a2cdb74b6721115133:pkgutils/.md5sum
 f:0b29e8ccbd55641c1fb569bf6783b442:ncurses/.footprint
 f:2d982730d6a0fe31909b04c25bf41295:ncurses/Pkgfile
 f:98112aa4c284c522b2491a68480acb3f:ncurses/.md5sum
+f:65632d841dc92bec22aa9354ad76ab5b:libgmp/.footprint
+f:b7f065a067634706124b916fb0890688:libgmp/Pkgfile
+f:5d729b581eb58943708b0a9f2b8ccc7b:libgmp/.md5sum
 f:0a0be31d8bf41bc9106b7bef211ae79f:libwebp/.footprint
 f:1c3e52d07e96ce25da366e853ffac2ca:libwebp/Pkgfile
 f:556638e25b120a8fab9a1bf4d4ce70ea:libwebp/.md5sum
@@ -265,6 +271,9 @@ f:38124e30ec3f75a2fa89757b4c0733a0:prt-get/prt-get.conf
 f:ac750b56369121ca6aad64dd4c03671b:prt-get/prt-get.aliases
 f:479aa4f212dc8e47475b99758f3d66b1:prt-get/Pkgfile
 f:3d5dbbf41303e750e4a3eab67daea9c4:prt-get/.md5sum
+f:743d0d1f8329daafbd39979400633161:libmpfr/.footprint
+f:831380d466ac1c323dfd66ac6083d34f:libmpfr/Pkgfile
+f:758ce7227000cd9995cdba30411a7dd5:libmpfr/.md5sum
 f:700c9da1489f6413ae4c86eab03d6cf4:llvm/.footprint
 f:05612be5a6ad85d61b69251cdfd9608e:llvm/Pkgfile
 f:c8c8bb0d22830e23df525cc295a3c83b:llvm/.md5sum

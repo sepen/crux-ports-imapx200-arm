@@ -39,6 +39,7 @@ d:gcc48-binutils
 d:fakeroot
 d:autoconf
 d:libnl
+d:ninja
 d:wpa_supplicant
 d:u-boot-tools
 d:procps
@@ -63,6 +64,7 @@ d:rc
 d:portdbc
 d:xterm
 d:ports
+d:jsoncpp
 d:gcc48-libgmp
 d:mesa3d
 d:xz
@@ -216,6 +218,9 @@ f:75ca5e9ec4a26e1eece5cc87ee5d2ebb:autoconf/.md5sum
 f:c43a9b6a87fe7d3878471083bb4e2f10:libnl/.footprint
 f:f75ec1ee3e6aacff9373184a43031932:libnl/Pkgfile
 f:95127047550a4aa4a524c30644b3f943:libnl/.md5sum
+f:314c9a03efc77e6867619c85aa5e3194:ninja/.footprint
+f:609273eee4da43ad87488f9872e183ce:ninja/Pkgfile
+f:e2282441d6b6c6cc6536ad60315032fd:ninja/.md5sum
 f:41f56e82611a4c6df27dd45cd05adf48:wpa_supplicant/.footprint
 f:a804f8c2828b929446a928d02be98018:wpa_supplicant/wlan
 f:5b505ff68474564b9eb44b04445ba730:wpa_supplicant/wpa_supplicant
@@ -321,6 +326,9 @@ f:c24101073a06fc58a02c99bf5d56bea7:ports/xorg.rsync
 f:faedd8944bd5ecc397f73bf73bd624d4:ports/core.rsync
 f:3136e8800bcf1242923d48913da9cde0:ports/.md5sum
 f:7db07c243cf80a2fe71364555e234901:ports/core-arm.rsync
+f:166b7cf7c2a97505d7e59f3e10cff462:jsoncpp/.footprint
+f:4ea9d7d60d6a99eaed405da790b89964:jsoncpp/Pkgfile
+f:2bec93b48ac508953a6ffe830df071e7:jsoncpp/.md5sum
 f:11fb1734665b4d9b9d5a9cc501602172:gcc48-libgmp/.footprint
 f:2577144486580eb6987ffe11c576d579:gcc48-libgmp/Pkgfile
 f:b5fcca72e295923883d2c35ec193da58:gcc48-libgmp/.md5sum

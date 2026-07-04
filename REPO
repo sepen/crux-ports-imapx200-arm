@@ -20,6 +20,7 @@ d:librsvg-compat
 d:libusb
 d:udev
 d:libpcre
+d:readline
 d:libfm-extra
 d:pciutils
 d:expat
@@ -35,6 +36,7 @@ d:autoconf
 d:libnl
 d:wpa_supplicant
 d:u-boot-tools
+d:procps
 d:libarchive
 d:openssh
 d:glibc
@@ -143,6 +145,11 @@ f:0a96c4f8ecf692d58ae0d34b4a43365f:udev/81-crux.rules
 f:70363326336a5214c77029a68a6e8ff9:libpcre/.footprint
 f:50fffb4825adedfa5bcfe97622af871e:libpcre/Pkgfile
 f:017b0d89ff74dfc7381cbd2f687ef700:libpcre/.md5sum
+f:5212f61b98a2d0044c685619ee6f1af2:readline/.footprint
+f:cb0e9b0e9a3742760642d52184a491c2:readline/readline-8.3.3.patch.gz
+f:2a8e61d0f1146cb71f1c61af4e77e03d:readline/Pkgfile
+f:553cf04fdeec54dca12062864c3ffba3:readline/inputrc
+f:b555026c94bb332706a96fd22bf62884:readline/.md5sum
 f:30a5b8783d0a466d958a83edfffa3560:libfm-extra/.footprint
 f:8b966fce1d4c4555527b06ea03d46dfa:libfm-extra/Pkgfile
 f:84564e9cf7ea7efecbf6389e5cbe5fbd:libfm-extra/.md5sum
@@ -192,6 +199,10 @@ f:ac2d584a2e394d6b5a8813291c94bb7d:wpa_supplicant/.md5sum
 f:74c666bf83bc64f38f85b348087d8943:u-boot-tools/.footprint
 f:4aa86f0e450f1e36b70f9d2e74e118fc:u-boot-tools/Pkgfile
 f:2a5fd95226657d82e115e7414be28345:u-boot-tools/.md5sum
+f:f07fd2781aa24e94bac180ff6289693a:procps/.footprint
+f:e252a579938327e7c99c54620faa4146:procps/sysctl.conf
+f:83178fce1722bddcdee11826d22709b1:procps/Pkgfile
+f:65e6d23e6c5d00a2fa9ab9a1f70b9958:procps/.md5sum
 f:b55d3b7eb4eb9ed8f4a113bbdfc3dd2d:libarchive/.footprint
 f:b06d1a74c4cac58c51f498087e2f4622:libarchive/Pkgfile
 f:139331e514cbdbffeaf6558e94180dcf:libarchive/.md5sum

@@ -20,6 +20,7 @@ d:librsvg-compat
 d:libusb
 d:udev
 d:libpcre
+d:libmpc
 d:bash
 d:readline
 d:libfm-extra
@@ -149,6 +150,9 @@ f:0a96c4f8ecf692d58ae0d34b4a43365f:udev/81-crux.rules
 f:70363326336a5214c77029a68a6e8ff9:libpcre/.footprint
 f:50fffb4825adedfa5bcfe97622af871e:libpcre/Pkgfile
 f:017b0d89ff74dfc7381cbd2f687ef700:libpcre/.md5sum
+f:c3919973d4c00433559a65e09b7ec43b:libmpc/.footprint
+f:f0f46cab5f032ccd62e01d0bdb14b813:libmpc/Pkgfile
+f:5b702d872eb73f709c888592e97408a9:libmpc/.md5sum
 f:32248d3becedd8e01816be2c3a698ecf:bash/.footprint
 f:6e6e99b1b2bf8cabb6d1e282efa0ad4f:bash/bash-5.3.15.patch.gz
 f:be5b8a1e3dd2272113e854ed0f155c47:bash/profile

@@ -5,6 +5,7 @@ d:meson
 d:man-pages
 d:mpdecimal
 d:gawk
+d:gcc
 d:menu-cache
 d:mlocate
 d:flex
@@ -53,6 +54,7 @@ d:xterm
 d:ports
 d:gcc48-libgmp
 d:mesa3d
+d:xz
 d:swig
 d:gcc48
 d:libuv
@@ -82,6 +84,10 @@ f:2c254b1ccff4dfc7ab5c33a9ab432173:mpdecimal/.md5sum
 f:611bae70510b486ff4449c3db02ab246:gawk/.footprint
 f:06f55f0d7ce9973dce78a888589c5e89:gawk/Pkgfile
 f:1f0dc3fcf3fbcec305ee6f12501ff94c:gawk/.md5sum
+f:a617c4d3fa11e0c9410ac213eb061677:gcc/gcc-nocheck-fixincludes.patch
+f:14dde684ff56fdae4f1b1d68e3fa9a4f:gcc/.footprint
+f:a2ccf2acc0614d3c7b300433f8cec61e:gcc/Pkgfile
+f:0eb1770b72260588774cb5e23a6e75b7:gcc/.md5sum
 f:1f89e0565116aa83dcb5eafbcafaca50:menu-cache/.footprint
 f:084ab41bbf1a15ff0d710146bf434714:menu-cache/Pkgfile
 f:0af5577c2daf0b26b8110cc0d87f1539:menu-cache/.md5sum
@@ -272,6 +278,9 @@ f:b5fcca72e295923883d2c35ec193da58:gcc48-libgmp/.md5sum
 f:855ae854257fdd970708e8d0b313c6ec:mesa3d/.footprint
 f:dd995d4d49a1e348b6acb6b89b966984:mesa3d/Pkgfile
 f:6c161f67ac9bb9c3e27bb4adabc93bfe:mesa3d/.md5sum
+f:ac26ab60db72a3acbd65666672cb9f76:xz/.footprint
+f:82cc7635cb36f29840dd0b227c00b295:xz/Pkgfile
+f:f258d5dc82d9f8b948a0013ad361e76f:xz/.md5sum
 f:bc6f4a5c9493c38b7ae38094aaceda27:swig/.footprint
 f:a7e076c942f86e60fbc7a4d0ee080e23:swig/Pkgfile
 f:a2a12610c34e4e20858ebfe483236c51:swig/.md5sum

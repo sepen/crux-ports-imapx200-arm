@@ -1,0 +1,23 @@
+# Description: C++ library for interacting with JSON
+# URL: https://github.com/open-source-parsers/jsoncpp
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Depends on: ninja
+
+name=jsoncpp
+version=1.9.6
+release=1
+source=(https://github.com/open-source-parsers/jsoncpp/archive/$version/$name-$version.tar.gz)
+
+build() {
+    echo ${version} > $name-$version/version
+
+    meson setup $name-$version build \
+        --prefix=/usr \
+        --buildtype=plain \
+        --wrap-mode nodownload \
+        -D b_lto=true \
+        -D b_pie=true \
+        --default-library shared
+    meson compile -C build
+    DESTDIR=$PKG meson install -C build
+}

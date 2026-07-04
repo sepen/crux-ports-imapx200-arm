@@ -20,6 +20,7 @@ d:librsvg-compat
 d:libusb
 d:udev
 d:libpcre
+d:bash
 d:readline
 d:libfm-extra
 d:pciutils
@@ -146,6 +147,10 @@ f:0a96c4f8ecf692d58ae0d34b4a43365f:udev/81-crux.rules
 f:70363326336a5214c77029a68a6e8ff9:libpcre/.footprint
 f:50fffb4825adedfa5bcfe97622af871e:libpcre/Pkgfile
 f:017b0d89ff74dfc7381cbd2f687ef700:libpcre/.md5sum
+f:32248d3becedd8e01816be2c3a698ecf:bash/.footprint
+f:be5b8a1e3dd2272113e854ed0f155c47:bash/profile
+f:7e98c241871deb8278da0b0d23e28ee3:bash/Pkgfile
+f:b34fc549a24ba161962644c36c870f64:bash/.md5sum
 f:5212f61b98a2d0044c685619ee6f1af2:readline/.footprint
 f:cb0e9b0e9a3742760642d52184a491c2:readline/readline-8.3.3.patch.gz
 f:2a8e61d0f1146cb71f1c61af4e77e03d:readline/Pkgfile

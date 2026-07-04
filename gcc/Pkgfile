@@ -1,0 +1,49 @@
+# Description: The GNU Compiler Collection
+# URL: http://gcc.gnu.org
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Arch Maintainer: CRUX-ARM System Team, devel at crux-arm dot nu
+# Depends on: zlib libmpc
+
+name=gcc
+version=7.5.0
+release=1
+source=(https://sourceware.org/pub/gcc/releases/gcc-$version/gcc-$version.tar.xz
+        $name-nocheck-fixincludes.patch)
+
+build() {
+  patch -d $name-$version -p1 -i $SRC/$name-nocheck-fixincludes.patch
+
+  mkdir build
+  cd build
+
+  ../$name-$version/configure --prefix=/usr \
+                              --build=arm-unknown-linux-gnueabihf \
+                              --with-abi=aapcs-linux --with-mode=arm \
+                              --with-float=hard \
+                              --libexecdir=/usr/lib \
+                              --enable-languages=c,c++,objc \
+                              --enable-threads=posix \
+                              --enable-__cxa_atexit \
+                              --enable-clocale=gnu \
+                              --enable-shared \
+                              --disable-nls \
+                              --with-x=no \
+                              --with-system-zlib \
+                              --with-pkgversion="CRUX-ARM"
+
+  make
+  make -j1 DESTDIR=$PKG install
+
+  mkdir $PKG/lib
+  ln -sf ../usr/bin/cpp $PKG/lib/cpp
+  ln -sf gcc $PKG/usr/bin/cc
+  ln -sf g++ $PKG/usr/bin/c++
+
+  mv $PKG/usr/lib/gcc/*/$version/include-fixed/{limits.h,syslimits.h} $PKG/usr/lib/gcc/*/$version/include/
+  rm -f $PKG/usr/lib/libstdc++.so.6.0.21-gdb.py
+  rm -fr $PKG/usr/share/{info,$name-$version}
+  rm -fr $PKG/usr/bin/*-linux-gnu*
+  rm -fr $PKG/usr/lib/gcc/*/$version/{install-tools,include-fixed}
+
+  sed -i "s|-L$SRC[^ ]* ||g" $PKG/usr/lib/{libstdc++.la,libsupc++.la}
+}

@@ -43,6 +43,7 @@ d:glibc
 d:kbd
 d:util-linux
 d:pkgutils
+d:ncurses
 d:libwebp
 d:usbutils
 d:zlib
@@ -238,6 +239,9 @@ f:0e1717fd1eeb62d8fce0c23682e9b337:pkgutils/.footprint
 f:b812e898306175b51d3ab11d93bbc892:pkgutils/pkgmk.conf
 f:ad80d8e6df2714b750433d9344f3ee3b:pkgutils/Pkgfile
 f:09909b0b6e3f40a2cdb74b6721115133:pkgutils/.md5sum
+f:0b29e8ccbd55641c1fb569bf6783b442:ncurses/.footprint
+f:2d982730d6a0fe31909b04c25bf41295:ncurses/Pkgfile
+f:98112aa4c284c522b2491a68480acb3f:ncurses/.md5sum
 f:0a0be31d8bf41bc9106b7bef211ae79f:libwebp/.footprint
 f:1c3e52d07e96ce25da366e853ffac2ca:libwebp/Pkgfile
 f:556638e25b120a8fab9a1bf4d4ce70ea:libwebp/.md5sum

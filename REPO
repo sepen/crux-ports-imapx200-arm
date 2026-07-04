@@ -1,3 +1,4 @@
+d:lzlib
 d:gcc48-libmpc
 d:perl
 d:python3-setuptools
@@ -11,6 +12,7 @@ d:mlocate
 d:flex
 d:dhcpcd
 d:httpup
+d:acl
 d:bindutils
 d:binutils
 d:pcmanfm
@@ -20,6 +22,7 @@ d:librsvg-compat
 d:libusb
 d:udev
 d:libpcre
+d:attr
 d:libmpc
 d:bash
 d:readline
@@ -47,6 +50,7 @@ d:util-linux
 d:pkgutils
 d:ncurses
 d:libgmp
+d:rhash
 d:libwebp
 d:usbutils
 d:zlib
@@ -70,6 +74,9 @@ d:libpcre2
 d:gcc48-libmpfr
 d:iptables
 d:libfm
+f:f0b131cdcf81dd6bf6f51c3db959020d:lzlib/.footprint
+f:ba08fad2bbb6e0e10916a80b1c69c13c:lzlib/Pkgfile
+f:f153f64dc8ad99f7f033ddc41e01e0d9:lzlib/.md5sum
 f:7ffa9a185639460b9c82184afde8d8db:gcc48-libmpc/.footprint
 f:d35f3c4e6ddbb568dfd5f62f5c8097b0:gcc48-libmpc/Pkgfile
 f:e9655c514e944d3b9490b24c8305f4f5:gcc48-libmpc/.md5sum
@@ -114,6 +121,9 @@ f:180d4a12ee4ef6cc09c744552d0e9e15:dhcpcd/.md5sum
 f:244d80213b48c8b5a5aca4c186f01f3d:httpup/.footprint
 f:df13c92747feac0d2c18bd8665d42767:httpup/Pkgfile
 f:de67ae098a8f8e3cb85dcf581e9a7f1e:httpup/.md5sum
+f:d4ae868f0b2166ff309ee2dcbcf5f3f1:acl/.footprint
+f:29f3959aa4991b9f31686c3e85248767:acl/Pkgfile
+f:a392e40070ffcaa5698be996eda0960c:acl/.md5sum
 f:fd0ad59defbeeef14b2f85606ddfb22d:bindutils/.footprint
 f:c65559d1b4e50680bfcf559bc13f3f31:bindutils/README
 f:02730790111a209d1fd39743e6c6f300:bindutils/Pkgfile
@@ -150,6 +160,9 @@ f:0a96c4f8ecf692d58ae0d34b4a43365f:udev/81-crux.rules
 f:70363326336a5214c77029a68a6e8ff9:libpcre/.footprint
 f:50fffb4825adedfa5bcfe97622af871e:libpcre/Pkgfile
 f:017b0d89ff74dfc7381cbd2f687ef700:libpcre/.md5sum
+f:0f10a62bbcceadfab61c9e17d2b51f0a:attr/.footprint
+f:ada007fd1f8fe9a58c04ed3486933091:attr/Pkgfile
+f:f9bbf442b14ec212bfbde11cc8b42bc7:attr/.md5sum
 f:c3919973d4c00433559a65e09b7ec43b:libmpc/.footprint
 f:f0f46cab5f032ccd62e01d0bdb14b813:libmpc/Pkgfile
 f:5b702d872eb73f709c888592e97408a9:libmpc/.md5sum
@@ -257,6 +270,9 @@ f:98112aa4c284c522b2491a68480acb3f:ncurses/.md5sum
 f:65632d841dc92bec22aa9354ad76ab5b:libgmp/.footprint
 f:b7f065a067634706124b916fb0890688:libgmp/Pkgfile
 f:5d729b581eb58943708b0a9f2b8ccc7b:libgmp/.md5sum
+f:4a0af4c1fecebb0d3cf2c7a1345f76ed:rhash/.footprint
+f:f9d1798b51a38c30d3cda7cfbcda671c:rhash/Pkgfile
+f:48002ab4cc77f01f4bdad6bf4a8f370e:rhash/.md5sum
 f:0a0be31d8bf41bc9106b7bef211ae79f:libwebp/.footprint
 f:1c3e52d07e96ce25da366e853ffac2ca:libwebp/Pkgfile
 f:556638e25b120a8fab9a1bf4d4ce70ea:libwebp/.md5sum

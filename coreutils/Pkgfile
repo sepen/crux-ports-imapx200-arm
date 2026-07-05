@@ -1,0 +1,30 @@
+# Description: A collection of core GNU utilities
+# URL: https://www.gnu.org/software/coreutils/
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Depends on: acl libcap libgmp
+
+name=coreutils
+version=9.11
+release=1
+source=(https://ftpmirror.gnu.org/gnu/$name/$name-$version.tar.xz)
+
+build() {
+    cd $name-$version
+
+    FORCE_UNSAFE_CONFIGURE=1 \
+    ./configure \
+        --prefix=/usr \
+        --libexecdir=/usr/lib \
+        --enable-no-install-program=uptime,kill,chcon,runcon \
+        --disable-nls \
+        --disable-assert \
+        --disable-year2038
+
+    make
+    make DESTDIR=$PKG install
+
+    install -d $PKG/bin
+    mv $PKG/usr/bin/{cat,chgrp,chmod,chown,cp,date,dd,df,echo,false,ln,ls,mkdir,sleep} $PKG/bin
+    mv $PKG/usr/bin/{mknod,mv,pwd,readlink,rm,rmdir,stty,sync,touch,true,uname} $PKG/bin
+    rm -r $PKG/usr/share/info
+}

@@ -11,10 +11,12 @@ d:menu-cache
 d:mlocate
 d:flex
 d:dhcpcd
+d:libcap
 d:httpup
 d:acl
 d:bindutils
 d:binutils
+d:linux-pam
 d:pcmanfm
 d:cmake
 d:wireless-tools
@@ -63,6 +65,7 @@ d:libmpfr
 d:llvm
 d:python3
 d:rc
+d:gettext
 d:portdbc
 d:xterm
 d:ports
@@ -122,6 +125,9 @@ f:78dfa7e9ac506c79fa732b8e4b70e9e4:dhcpcd/README
 f:0b056dd3e5a3e1eacb7c9b38f0641e4d:dhcpcd/rc.dhcpcd
 f:99698c45c6c7dc4e88eb302ef1672a00:dhcpcd/Pkgfile
 f:180d4a12ee4ef6cc09c744552d0e9e15:dhcpcd/.md5sum
+f:cbe73ab5f5892f38a6d24b6d2e66a0fa:libcap/.footprint
+f:1411a5dfe59fb16fbeff2bf5ab6fbe23:libcap/Pkgfile
+f:0f7cf4614c96b9aa1fa582848089e253:libcap/.md5sum
 f:244d80213b48c8b5a5aca4c186f01f3d:httpup/.footprint
 f:df13c92747feac0d2c18bd8665d42767:httpup/Pkgfile
 f:de67ae098a8f8e3cb85dcf581e9a7f1e:httpup/.md5sum
@@ -136,6 +142,9 @@ f:e7dbe5f98d1df6c23c73bde78ec79787:bindutils/utils.patch
 f:9ce4d46b7437e97239a93ba9620e4a8a:binutils/.footprint
 f:974535abd42a091d0161906b3b5a0b61:binutils/Pkgfile
 f:934db1a56518531601c4242044a03635:binutils/.md5sum
+f:589642fbb31205ad168d34663c1d2e02:linux-pam/.footprint
+f:7e33e98b20d43d3d8fe483adc60cf393:linux-pam/Pkgfile
+f:6c7f17eb7ff5f9e052c8c425ed24315f:linux-pam/.md5sum
 f:6e88732c3fa18b7347973e4393da6ab1:pcmanfm/.footprint
 f:b9c0e9bbd62a1bd707d2d53a6fcdd546:pcmanfm/post-install
 f:343a98a2d33f973dae19bd81a918d936:pcmanfm/Pkgfile
@@ -318,6 +327,9 @@ f:2a20bba8549f13cab9c6d84c1dbbfc7c:rc/no-devtmpfs.patch
 f:441c8f54e449ebb04236731ee6033784:rc/.footprint
 f:4c4a89b90e7e930cc8ae2d78312dbd00:rc/Pkgfile
 f:96ddd38a6a92b63fc36cd35050f2fb84:rc/.md5sum
+f:b66f28122de2fa333a958a42895eb3a6:gettext/.footprint
+f:ed65316c75a671a47a2df3aa38c60791:gettext/Pkgfile
+f:3d71df9eae09ff66fad0110fedbde891:gettext/.md5sum
 f:3cb38a77be4e7ae112ca07ff9beff52d:portdbc/.footprint
 f:d07fcee92689506d21d516d5e0c16b1d:portdbc/Pkgfile
 f:6d369134e2aa07120bf99a215015c8e7:portdbc/fixups.patch

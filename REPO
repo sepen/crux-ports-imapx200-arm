@@ -66,6 +66,7 @@ d:coreutils
 d:automake
 d:prt-get
 d:libmpfr
+d:bzip2
 d:llvm
 d:python3
 d:rc
@@ -334,6 +335,9 @@ f:3d5dbbf41303e750e4a3eab67daea9c4:prt-get/.md5sum
 f:743d0d1f8329daafbd39979400633161:libmpfr/.footprint
 f:831380d466ac1c323dfd66ac6083d34f:libmpfr/Pkgfile
 f:758ce7227000cd9995cdba30411a7dd5:libmpfr/.md5sum
+f:e18b6e3fe6f5039033680dd7f4c2eaa8:bzip2/.footprint
+f:7b0dd4e899c3f076da519084f31c80b6:bzip2/Pkgfile
+f:e046187bfe84ef016a6c9949c2263538:bzip2/.md5sum
 f:700c9da1489f6413ae4c86eab03d6cf4:llvm/.footprint
 f:05612be5a6ad85d61b69251cdfd9608e:llvm/Pkgfile
 f:c8c8bb0d22830e23df525cc295a3c83b:llvm/.md5sum

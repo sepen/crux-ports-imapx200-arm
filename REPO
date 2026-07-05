@@ -16,6 +16,7 @@ d:acl
 d:bindutils
 d:binutils
 d:pcmanfm
+d:cmake
 d:wireless-tools
 d:ca-certificates
 d:librsvg-compat
@@ -138,6 +139,9 @@ f:6e88732c3fa18b7347973e4393da6ab1:pcmanfm/.footprint
 f:b9c0e9bbd62a1bd707d2d53a6fcdd546:pcmanfm/post-install
 f:343a98a2d33f973dae19bd81a918d936:pcmanfm/Pkgfile
 f:39541c0eec33bd98335db55cb854e747:pcmanfm/.md5sum
+f:beaaca2bc98e843934cc7e924c24ab08:cmake/.footprint
+f:2c875581e377a9a16f749cbef3cf3cb2:cmake/Pkgfile
+f:333ed9555d230d11d99ddc6c7d06dd29:cmake/.md5sum
 f:bf3e5503156333f750f6b0ff789a573d:wireless-tools/.footprint
 f:46d65424e060346ab4077fdf5431d511:wireless-tools/Pkgfile
 f:74668df14f05a96044fa47283ac62f92:wireless-tools/.md5sum

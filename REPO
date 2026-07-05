@@ -18,6 +18,7 @@ d:bindutils
 d:binutils
 d:linux-pam
 d:pcmanfm
+d:db
 d:diffutils
 d:cmake
 d:wireless-tools
@@ -152,6 +153,9 @@ f:6e88732c3fa18b7347973e4393da6ab1:pcmanfm/.footprint
 f:b9c0e9bbd62a1bd707d2d53a6fcdd546:pcmanfm/post-install
 f:343a98a2d33f973dae19bd81a918d936:pcmanfm/Pkgfile
 f:39541c0eec33bd98335db55cb854e747:pcmanfm/.md5sum
+f:034680aa69ee64596517784fe1161c1b:db/.footprint
+f:d658360cbf187dd6f6c9e6cd0dda66f8:db/Pkgfile
+f:fbb8c0b8f6cd4d442a1df46079338145:db/.md5sum
 f:eb75b6a1348671ae4a0be6d43fe89a2b:diffutils/.footprint
 f:2914299dd4fc213b6d93539595a8566d:diffutils/Pkgfile
 f:1782849f36f8f3dea8e6bf8340ec8feb:diffutils/.md5sum

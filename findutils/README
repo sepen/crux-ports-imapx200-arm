@@ -1,0 +1,20 @@
+README for coreutils
+
+
+IMPORTANT NOTES
+
+  Findutils enables Y2038 support by default and aborts the configure stage
+  if a 64-bit `time_t` is unavailable.
+
+  On this platform (ARMv6 + glibc 2.22), `time_t` is still 32-bit, so the
+  configure check fails with:
+
+    checking for gcc option to support timestamps after 2038... support not detected
+    configure: error: could not enable timestamps after mid-January 2038.
+
+  To preserve compatibility with glibc 2.22, this port passes:
+
+    --disable-year2038
+
+  This is a compatibility workaround only. It does not change the existing
+  ABI or behavior of the system, which already uses a 32-bit `time_t`.

@@ -58,6 +58,7 @@ d:rhash
 d:libwebp
 d:usbutils
 d:zlib
+d:libnghttp2
 d:coreutils
 d:automake
 d:prt-get
@@ -302,6 +303,9 @@ f:31a594cd76368f8c44fc4a1180556336:usbutils/.md5sum
 f:240e84f87c7ca8151ae7cd874574e0b3:zlib/.footprint
 f:37e9b719c55b038a591c78094dd643cb:zlib/Pkgfile
 f:64d52e7effffaefb21f86885995af9ee:zlib/.md5sum
+f:2fd6aaf51e3278f91c2d64b11658d344:libnghttp2/.footprint
+f:4ce92d07e8d4fb26f3a4ef9061f9ef42:libnghttp2/Pkgfile
+f:863c106622b9450ae42bb333bb22932f:libnghttp2/.md5sum
 f:e70e6bccf3e2bc0299e64d39994f1c38:coreutils/.footprint
 f:e199c0769007bba61c43fd89ef3f80b8:coreutils/README
 f:3803e66b954ec01cbb1c304f931f6cdf:coreutils/Pkgfile

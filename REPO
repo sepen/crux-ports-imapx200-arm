@@ -18,6 +18,7 @@ d:bindutils
 d:binutils
 d:linux-pam
 d:pcmanfm
+d:diffutils
 d:cmake
 d:wireless-tools
 d:ca-certificates
@@ -34,6 +35,7 @@ d:pciutils
 d:expat
 d:cpk
 d:stella
+d:findutils
 d:libffi
 d:ed
 d:xorg-xcb-util-xrm
@@ -150,6 +152,9 @@ f:6e88732c3fa18b7347973e4393da6ab1:pcmanfm/.footprint
 f:b9c0e9bbd62a1bd707d2d53a6fcdd546:pcmanfm/post-install
 f:343a98a2d33f973dae19bd81a918d936:pcmanfm/Pkgfile
 f:39541c0eec33bd98335db55cb854e747:pcmanfm/.md5sum
+f:eb75b6a1348671ae4a0be6d43fe89a2b:diffutils/.footprint
+f:2914299dd4fc213b6d93539595a8566d:diffutils/Pkgfile
+f:1782849f36f8f3dea8e6bf8340ec8feb:diffutils/.md5sum
 f:beaaca2bc98e843934cc7e924c24ab08:cmake/.footprint
 f:2c875581e377a9a16f749cbef3cf3cb2:cmake/Pkgfile
 f:333ed9555d230d11d99ddc6c7d06dd29:cmake/.md5sum
@@ -209,6 +214,10 @@ f:33f021ae8773decb27d0461028bb88ce:stella/.footprint
 f:b9c0e9bbd62a1bd707d2d53a6fcdd546:stella/post-install
 f:75d666cbab1ee6bf8acf8c1e8ecdd724:stella/Pkgfile
 f:53455b0f67ba13930d2af15e9655c6df:stella/.md5sum
+f:2dc5a54cb85bdabf757242415c7aaf15:findutils/.footprint
+f:cb7a0e8908b9b69c481289a7d6af41e6:findutils/README
+f:7b70c68b50b37d7ff4a800c278c265b8:findutils/Pkgfile
+f:09ce150ca1cd8cedbb90a62abff3ae8a:findutils/.md5sum
 f:b6c0535b479fdc01c339246e65243800:libffi/.footprint
 f:fb0803228ced3e9f3df95edbd7558063:libffi/Pkgfile
 f:ad1e6cb5d3b7e181a624908a0de1c0ed:libffi/.md5sum

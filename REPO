@@ -56,6 +56,7 @@ d:rhash
 d:libwebp
 d:usbutils
 d:zlib
+d:coreutils
 d:automake
 d:prt-get
 d:libmpfr
@@ -292,6 +293,10 @@ f:31a594cd76368f8c44fc4a1180556336:usbutils/.md5sum
 f:240e84f87c7ca8151ae7cd874574e0b3:zlib/.footprint
 f:37e9b719c55b038a591c78094dd643cb:zlib/Pkgfile
 f:64d52e7effffaefb21f86885995af9ee:zlib/.md5sum
+f:e70e6bccf3e2bc0299e64d39994f1c38:coreutils/.footprint
+f:e199c0769007bba61c43fd89ef3f80b8:coreutils/README
+f:3803e66b954ec01cbb1c304f931f6cdf:coreutils/Pkgfile
+f:0bbff662a75e6190bc7eef86d0115928:coreutils/.md5sum
 f:d393c18042e15eb76e8b96dfa2c92c48:automake/.footprint
 f:300a9f5f653e0f86d0aaa33b05cb7f05:automake/Pkgfile
 f:e3e1c80403f157e4476d03224b77ded6:automake/.md5sum

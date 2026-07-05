@@ -1,0 +1,41 @@
+# Description: A cross-platform, open-source make system
+# URL: https://www.cmake.org/
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Depends on: curl expat jsoncpp libarchive libuv lzlib ncurses rhash
+# Optional: python3-sphinx
+
+name=cmake
+version=3.31.12
+release=1
+source=(https://cmake.org/files/v${version%.*}/$name-$version.tar.gz)
+
+build() {
+    cd $name-$version
+
+    sed -i Source/CMakeInstallDestinations.cmake \
+        -e 's|share/cmake-${CMake_VERSION_MAJOR}.${CMake_VERSION_MINOR}|share/cmake|'
+
+    prt-get isinst ccache && PKGMK_CMAKE+=' --enable-ccache'
+
+    ./bootstrap --generator=Ninja $PKGMK_CMAKE \
+        --prefix=/usr \
+        --datadir=/share/cmake \
+        --bootstrap-system-libuv \
+        --bootstrap-system-jsoncpp \
+        --bootstrap-system-librhash \
+        --no-system-cppdap \
+        --system-libs \
+        --parallel=${JOBS:-1} \
+        $(prt-get isinst python3-sphinx >/dev/null && echo --sphinx-man) \
+        -- -D CMake_BUILD_LTO=ON \
+        -D BUILD_TESTING=OFF
+
+    ninja -j ${JOBS:-1}
+    DESTDIR=$PKG ninja install
+    rm -r $PKG/usr/{doc,share/cmake/Help}
+
+    ln -sf $name $PKG/usr/share/$name-${version%.*}
+
+    prt-get isinst bash-completion || rm -r $PKG/usr/share/bash-completion
+    rm -r $PKG/usr/share/emacs
+}

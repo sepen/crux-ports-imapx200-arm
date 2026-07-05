@@ -1,0 +1,43 @@
+# Description: Pluggable Authentication Modules (PAM) for Linux
+# URL: https://github.com/linux-pam/linux-pam
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Depends on: ninja
+
+name=linux-pam
+version=1.7.2
+release=1
+source=(https://github.com/$name/$name/releases/download/v${version}/Linux-PAM-$version.tar.xz \
+    common-account common-auth common-password common-session \
+    other)
+
+build() {
+    echo > Linux-PAM-$version/po/LINGUAS
+
+    meson setup build Linux-PAM-$version \
+        --prefix=/usr \
+        --sbindir=/sbin \
+        --libdir=/lib \
+        --buildtype=plain \
+        --wrap-mode=nodownload \
+        -D b_lto=true \
+        -D b_pie=true \
+        -D securedir=/lib/security \
+        -D vendordir=/etc \
+        -D pam_userdb=disabled \
+        -D docs=disabled
+
+    meson compile -C build -j ${JOBS:-1}
+    DESTDIR=$PKG meson install -C build
+
+    mv $PKG/lib/pkgconfig $PKG/usr/lib
+
+    # unix_chkpwd needs to be setuid root
+    chmod u+s $PKG/sbin/unix_chkpwd
+
+    mkdir -p $PKG/etc/pam.d
+    install -o root -g root -m 0644 \
+        $SRC/{common-*,other} \
+        $PKG/etc/pam.d/
+
+    rm -r $PKG/usr/lib/systemd
+}

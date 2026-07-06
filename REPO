@@ -24,7 +24,6 @@ d:pciutils
 d:cpk
 d:stella
 d:findutils
-d:libffi
 d:xorg-xcb-util-xrm
 d:dcron
 d:gcc48-binutils
@@ -158,9 +157,6 @@ f:2dc5a54cb85bdabf757242415c7aaf15:findutils/.footprint
 f:cb7a0e8908b9b69c481289a7d6af41e6:findutils/README
 f:7b70c68b50b37d7ff4a800c278c265b8:findutils/Pkgfile
 f:09ce150ca1cd8cedbb90a62abff3ae8a:findutils/.md5sum
-f:b6c0535b479fdc01c339246e65243800:libffi/.footprint
-f:fb0803228ced3e9f3df95edbd7558063:libffi/Pkgfile
-f:ad1e6cb5d3b7e181a624908a0de1c0ed:libffi/.md5sum
 f:80e849824bbe614b2a87b956bf7fa46a:xorg-xcb-util-xrm/.footprint
 f:fba1f3f01dbded60441de1a65b7d8e04:xorg-xcb-util-xrm/Pkgfile
 f:df300b56f70767921b1bc6c6e44745f1:xorg-xcb-util-xrm/.md5sum

@@ -1558,7 +1558,7 @@ lrwxrwxrwx	root/root	usr/lib/libBrokenLocale.so -> ../../lib/libBrokenLocale.so.
 -rw-r--r--	root/root	usr/lib/libanl.a
 lrwxrwxrwx	root/root	usr/lib/libanl.so -> ../../lib/libanl.so.1
 -rw-r--r--	root/root	usr/lib/libc.a
--rw-r--r--	root/root	usr/lib/libc.so
+-rwxr-xr-x	root/root	usr/lib/libc.so
 -rw-r--r--	root/root	usr/lib/libc_nonshared.a
 lrwxrwxrwx	root/root	usr/lib/libcidn.so -> ../../lib/libcidn.so.1
 -rw-r--r--	root/root	usr/lib/libcrypt.a

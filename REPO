@@ -72,6 +72,7 @@ d:libgmp
 d:libmd
 d:rhash
 d:libwebp
+d:signify
 d:libpipeline
 d:usbutils
 d:libcap-ng
@@ -391,6 +392,9 @@ f:48002ab4cc77f01f4bdad6bf4a8f370e:rhash/.md5sum
 f:0a0be31d8bf41bc9106b7bef211ae79f:libwebp/.footprint
 f:1c3e52d07e96ce25da366e853ffac2ca:libwebp/Pkgfile
 f:556638e25b120a8fab9a1bf4d4ce70ea:libwebp/.md5sum
+f:a98cb3bec29ec19898280d032258b09a:signify/.footprint
+f:20e638bc4ab095bcd94f758d40bb6cdc:signify/Pkgfile
+f:a0c74fa626ae115d15bc186ad1989a98:signify/.md5sum
 f:e7548dbba232f6fed6cb15ee138767ef:libpipeline/.footprint
 f:d0dca6b407205fa801b08a2de794e55f:libpipeline/Pkgfile
 f:e45217678edf46ee8fc0e72a24c51ff2:libpipeline/.md5sum

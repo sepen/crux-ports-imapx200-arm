@@ -28,7 +28,6 @@ d:xorg-xcb-util-xrm
 d:dcron
 d:gcc48-binutils
 d:fakeroot
-d:jansson
 d:libnl
 d:ninja
 d:wpa_supplicant
@@ -172,9 +171,6 @@ f:6298573e2640af868e000b9de9dbf1cc:gcc48-binutils/.md5sum
 f:46e48b7a08d665a4cb310d40d8933939:fakeroot/.footprint
 f:c7d0f5a45f79481a80fed2f76f6e9737:fakeroot/Pkgfile
 f:05f9e258413f79347746d97c47899a7f:fakeroot/.md5sum
-f:9c712d21487e51554cb0660017b9897c:jansson/.footprint
-f:0baa89bf6b7810987c66cd3af02021d1:jansson/Pkgfile
-f:fa25d159af02e7b727925952c2ddd34f:jansson/.md5sum
 f:c43a9b6a87fe7d3878471083bb4e2f10:libnl/.footprint
 f:f75ec1ee3e6aacff9373184a43031932:libnl/Pkgfile
 f:95127047550a4aa4a524c30644b3f943:libnl/.md5sum

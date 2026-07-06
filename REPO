@@ -21,12 +21,10 @@ d:libpcre
 d:patch
 d:libfm-extra
 d:pciutils
-d:expat
 d:cpk
 d:stella
 d:findutils
 d:libffi
-d:ed
 d:xorg-xcb-util-xrm
 d:dcron
 d:gcc48-binutils
@@ -149,9 +147,6 @@ f:84564e9cf7ea7efecbf6389e5cbe5fbd:libfm-extra/.md5sum
 f:d03dae40b2f698f6b3b6d0ee2cba58fc:pciutils/.footprint
 f:1ca34954624f7165f729f22b71478f48:pciutils/Pkgfile
 f:5cec7d32541cee6e4f4e2ab8e2b0fc9a:pciutils/.md5sum
-f:a747b2a72dd21b3a9ee8fe311a485a2d:expat/.footprint
-f:f91b85f7c58ca3efd477e7169e3d7899:expat/Pkgfile
-f:765bc701e509514a611474680e321851:expat/.md5sum
 f:67b8eb8b649909e0a49df73f39ca23b3:cpk/.footprint
 f:57fcae1b798490dab466789db3c70ced:cpk/Pkgfile
 f:2d04c8142ce0defef4110d9d08004cb8:cpk/.md5sum
@@ -166,9 +161,6 @@ f:09ce150ca1cd8cedbb90a62abff3ae8a:findutils/.md5sum
 f:b6c0535b479fdc01c339246e65243800:libffi/.footprint
 f:fb0803228ced3e9f3df95edbd7558063:libffi/Pkgfile
 f:ad1e6cb5d3b7e181a624908a0de1c0ed:libffi/.md5sum
-f:3e155d4a7adb32da44665179758ec66b:ed/.footprint
-f:3f7a8730531cbc5d54fc97bc36d7f934:ed/Pkgfile
-f:ae7ebb89a47ae19521480700f0cb8819:ed/.md5sum
 f:80e849824bbe614b2a87b956bf7fa46a:xorg-xcb-util-xrm/.footprint
 f:fba1f3f01dbded60441de1a65b7d8e04:xorg-xcb-util-xrm/Pkgfile
 f:df300b56f70767921b1bc6c6e44745f1:xorg-xcb-util-xrm/.md5sum

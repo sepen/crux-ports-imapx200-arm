@@ -14,6 +14,7 @@ d:dhcpcd
 d:libcap
 d:httpup
 d:acl
+d:lzo
 d:bindutils
 d:binutils
 d:linux-pam
@@ -139,6 +140,9 @@ f:de67ae098a8f8e3cb85dcf581e9a7f1e:httpup/.md5sum
 f:d4ae868f0b2166ff309ee2dcbcf5f3f1:acl/.footprint
 f:29f3959aa4991b9f31686c3e85248767:acl/Pkgfile
 f:a392e40070ffcaa5698be996eda0960c:acl/.md5sum
+f:733808925db696285848d47ee0491ed7:lzo/.footprint
+f:1e0cff0f6507740f26c4732862aa7234:lzo/Pkgfile
+f:acf9cc85470bca14f1489cbd3a73c801:lzo/.md5sum
 f:fd0ad59defbeeef14b2f85606ddfb22d:bindutils/.footprint
 f:c65559d1b4e50680bfcf559bc13f3f31:bindutils/README
 f:02730790111a209d1fd39743e6c6f300:bindutils/Pkgfile

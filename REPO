@@ -8,7 +8,6 @@ d:menu-cache
 d:mlocate
 d:dhcpcd
 d:httpup
-d:acl
 d:bindutils
 d:binutils
 d:linux-pam
@@ -19,7 +18,6 @@ d:librsvg-compat
 d:libusb
 d:udev
 d:libpcre
-d:attr
 d:libfm-extra
 d:pciutils
 d:expat
@@ -98,9 +96,6 @@ f:180d4a12ee4ef6cc09c744552d0e9e15:dhcpcd/.md5sum
 f:244d80213b48c8b5a5aca4c186f01f3d:httpup/.footprint
 f:df13c92747feac0d2c18bd8665d42767:httpup/Pkgfile
 f:de67ae098a8f8e3cb85dcf581e9a7f1e:httpup/.md5sum
-f:d4ae868f0b2166ff309ee2dcbcf5f3f1:acl/.footprint
-f:29f3959aa4991b9f31686c3e85248767:acl/Pkgfile
-f:a392e40070ffcaa5698be996eda0960c:acl/.md5sum
 f:fd0ad59defbeeef14b2f85606ddfb22d:bindutils/.footprint
 f:c65559d1b4e50680bfcf559bc13f3f31:bindutils/README
 f:02730790111a209d1fd39743e6c6f300:bindutils/Pkgfile
@@ -144,9 +139,6 @@ f:0a96c4f8ecf692d58ae0d34b4a43365f:udev/81-crux.rules
 f:70363326336a5214c77029a68a6e8ff9:libpcre/.footprint
 f:50fffb4825adedfa5bcfe97622af871e:libpcre/Pkgfile
 f:017b0d89ff74dfc7381cbd2f687ef700:libpcre/.md5sum
-f:0f10a62bbcceadfab61c9e17d2b51f0a:attr/.footprint
-f:ada007fd1f8fe9a58c04ed3486933091:attr/Pkgfile
-f:f9bbf442b14ec212bfbde11cc8b42bc7:attr/.md5sum
 f:30a5b8783d0a466d958a83edfffa3560:libfm-extra/.footprint
 f:8b966fce1d4c4555527b06ea03d46dfa:libfm-extra/Pkgfile
 f:84564e9cf7ea7efecbf6389e5cbe5fbd:libfm-extra/.md5sum

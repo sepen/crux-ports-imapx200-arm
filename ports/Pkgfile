@@ -11,12 +11,13 @@ source=(http://crux.nu/files/tools/ports/$name-$version.tar.gz \
           core.pub opt.pub xorg.pub contrib.pub \
           core.rsync opt.rsync xorg.rsync contrib.rsync.inactive \
           core-arm.rsync opt-arm.rsync xorg-arm.rsync
-          core-arm.pub opt-arm.pub xorg-arm.pub)
+          core-arm.pub opt-arm.pub xorg-arm.pub \
+          imapx200-arm.httpup)
 
 build () {
     cd $name-$version
     make
     make DESTDIR=$PKG MANDIR=/usr/share/man install
 
-    install -m 0644 $SRC/*.{pub,rsync,inactive} $PKG/etc/ports
+    install -m 0644 $SRC/*.{pub,rsync,httpup,inactive} $PKG/etc/ports
 }

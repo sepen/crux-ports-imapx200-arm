@@ -18,6 +18,7 @@ d:librsvg-compat
 d:libusb
 d:udev
 d:libpcre
+d:patch
 d:libfm-extra
 d:pciutils
 d:expat
@@ -67,9 +68,9 @@ f:012a92e2adce9310db12d06227f657c6:tar/.footprint
 f:35743f13e4ae5ff7d98c340be46029d3:tar/Pkgfile
 f:4509d317e0aa3fc8b66d9bd30468a28a:tar/tar-1.35-acl-2.4.0.patch
 f:d0423dfbde5a9292f3e82ce9e8ea89b5:tar/.md5sum
-f:52a90ab47bf944130165838bbcef8686:python3-setuptools/.footprint
-f:de2a2111fe991ccada387856f1f469c4:python3-setuptools/Pkgfile
-f:3b56d4ac4357eac901e043ed0870edc1:python3-setuptools/.md5sum
+f:b3da0ed1fd09677a4b6b00dd9bd88198:python3-setuptools/.footprint
+f:f63d9da79e724cf31672bacad3e3d21f:python3-setuptools/Pkgfile
+f:529af1c8c8ba5aa530160469b9a572b4:python3-setuptools/.md5sum
 f:bc2ad577b288fa4b1af7a3f831a12f55:man-pages/.footprint
 f:52929b5b660b57c3b11724444b194ae8:man-pages/Pkgfile
 f:ecd360cc20a2c10898c2270f20458e07:man-pages/.md5sum
@@ -139,6 +140,9 @@ f:0a96c4f8ecf692d58ae0d34b4a43365f:udev/81-crux.rules
 f:70363326336a5214c77029a68a6e8ff9:libpcre/.footprint
 f:50fffb4825adedfa5bcfe97622af871e:libpcre/Pkgfile
 f:017b0d89ff74dfc7381cbd2f687ef700:libpcre/.md5sum
+f:a316f48f5130f7601752d298d8187108:patch/.footprint
+f:3c5487b99acda07b3c3f3f60d237aa5d:patch/Pkgfile
+f:c2bf59b812627f76c456ce7d8bb40358:patch/.md5sum
 f:30a5b8783d0a466d958a83edfffa3560:libfm-extra/.footprint
 f:8b966fce1d4c4555527b06ea03d46dfa:libfm-extra/Pkgfile
 f:84564e9cf7ea7efecbf6389e5cbe5fbd:libfm-extra/.md5sum

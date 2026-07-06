@@ -1,5 +1,6 @@
 d:lzlib
 d:gcc48-libmpc
+d:tar
 d:perl
 d:python3-setuptools
 d:meson
@@ -27,6 +28,7 @@ d:wireless-tools
 d:ca-certificates
 d:librsvg-compat
 d:libedit
+d:libmnl
 d:libusb
 d:udev
 d:libpcre
@@ -70,6 +72,7 @@ d:libgmp
 d:libmd
 d:rhash
 d:libwebp
+d:libpipeline
 d:usbutils
 d:libcap-ng
 d:zlib
@@ -107,6 +110,10 @@ f:f153f64dc8ad99f7f033ddc41e01e0d9:lzlib/.md5sum
 f:7ffa9a185639460b9c82184afde8d8db:gcc48-libmpc/.footprint
 f:d35f3c4e6ddbb568dfd5f62f5c8097b0:gcc48-libmpc/Pkgfile
 f:e9655c514e944d3b9490b24c8305f4f5:gcc48-libmpc/.md5sum
+f:012a92e2adce9310db12d06227f657c6:tar/.footprint
+f:35743f13e4ae5ff7d98c340be46029d3:tar/Pkgfile
+f:4509d317e0aa3fc8b66d9bd30468a28a:tar/tar-1.35-acl-2.4.0.patch
+f:d0423dfbde5a9292f3e82ce9e8ea89b5:tar/.md5sum
 f:3a7d876718436517b132925b509b226d:perl/.footprint
 f:f213218161e29f784e6b7aee0f90cb2d:perl/Pkgfile
 f:e96c6855759c0f34c69104b531eb1083:perl/.md5sum
@@ -210,6 +217,9 @@ f:4f59b431355f55a1dd8ac135d359e8aa:librsvg-compat/.md5sum
 f:93cda66466316be475017b7e6aa263db:libedit/.footprint
 f:51e87f3369a41aee7a25f5a9b364c7c5:libedit/Pkgfile
 f:ce771147b9600bd9a5c46fc04ebcece6:libedit/.md5sum
+f:384e2c127bc40c69df406f29ded214c8:libmnl/.footprint
+f:5c191b48413760215bd2f267938d4f88:libmnl/Pkgfile
+f:83e06aaf6129149bd41355f5c590d244:libmnl/.md5sum
 f:e4ffb05202a3d8278081982fbcb342e4:libusb/.footprint
 f:4e471d090171c3dfccb826474c1d2e3b:libusb/Pkgfile
 f:c8e04a930e08f7f3aae0b3ecdf2a169f:libusb/.md5sum
@@ -338,7 +348,7 @@ f:0f64c783e67229e7f116bc5be4568961:openssh/.md5sum
 f:aa90da06a29f640e8b7534cac337e376:glibc/locale.gen.in
 f:49019f98ab824254ebeca5aba2f22ab1:glibc/CVE-2015-7547.patch
 f:75931315bf9bc9be15a5e25e4ddd5f0d:glibc/nsswitch.conf
-f:90c3da2b86051d4080b14312b7111e8d:glibc/.footprint
+f:bf837c379f7f8eab1493e481d38b5e32:glibc/.footprint
 f:0d2d7f988d1756d693b262d46fee7d17:glibc/.nostrip
 f:f7fefce570a3c776e26e778c5e401490:glibc/ld.so.conf
 f:3972ff7405c89be7f5694bdc28fbd798:glibc/CVE-2015-8776.patch
@@ -381,6 +391,9 @@ f:48002ab4cc77f01f4bdad6bf4a8f370e:rhash/.md5sum
 f:0a0be31d8bf41bc9106b7bef211ae79f:libwebp/.footprint
 f:1c3e52d07e96ce25da366e853ffac2ca:libwebp/Pkgfile
 f:556638e25b120a8fab9a1bf4d4ce70ea:libwebp/.md5sum
+f:e7548dbba232f6fed6cb15ee138767ef:libpipeline/.footprint
+f:d0dca6b407205fa801b08a2de794e55f:libpipeline/Pkgfile
+f:e45217678edf46ee8fc0e72a24c51ff2:libpipeline/.md5sum
 f:0345c95004e4ce9329a157e612737360:usbutils/usb.ids.xz
 f:7d23bc565916ae465d24ba3c6d595ba8:usbutils/.footprint
 f:7a5cd743efe498ab6153f43e2c374332:usbutils/Pkgfile

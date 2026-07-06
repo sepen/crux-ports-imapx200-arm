@@ -1,19 +1,22 @@
 # Description: CRUX ports system tools
 # URL: http://crux.nu
-# Maintainer: Jose Beneyto, sepen at crux dot nu
-# Depends on: httpup rsync
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Arch Maintainer: CRUX-ARM System Team, devel at crux-arm dot nu
+# Depends on:
 
 name=ports
 version=1.6
-release=5
+release=4
 source=(http://crux.nu/files/tools/ports/$name-$version.tar.gz \
-        core.rsync opt.rsync xorg.rsync contrib.rsync.inactive \
-        imapx200-arm.httpup core-arm.rsync opt-arm.rsync xorg-arm.rsync)
+          core.pub opt.pub xorg.pub contrib.pub \
+          core.rsync opt.rsync xorg.rsync contrib.rsync.inactive \
+          core-arm.rsync opt-arm.rsync xorg-arm.rsync
+          core-arm.pub opt-arm.pub xorg-arm.pub)
 
 build () {
-  cd $name-$version
-  make
-  make DESTDIR=$PKG MANDIR=/usr/share/man install
+    cd $name-$version
+    make
+    make DESTDIR=$PKG MANDIR=/usr/share/man install
 
-  install -m 0644 $SRC/*.{rsync,httpup,inactive} $PKG/etc/ports
+    install -m 0644 $SRC/*.{pub,rsync,inactive} $PKG/etc/ports
 }

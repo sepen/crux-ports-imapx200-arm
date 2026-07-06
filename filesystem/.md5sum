@@ -1,0 +1,9 @@
+915cf64e2ab613887db6ce2e2c41eeb4  fstab
+a0bb1d24d8d1728a4d9d4bbdbba4237d  group
+e993396acb8d7e47e65bb9b72dad543b  issue
+346ede8d637940e2898cd29c56a37d30  mime.types
+d41d8cd98f00b204e9800998ecf8427e  motd
+93464384634f815bf46a995f74823c5e  passwd
+4faaa4e1ba24038f8638a0cae5046cfb  securetty
+a79aae150aa240b06d52cc22d41bd3b6  shadow
+dc4ff0c96d8dcd2141febc8b766e9a6b  shells

@@ -1,0 +1,27 @@
+# Description: The GNU Project parser generator
+# URL: https://www.gnu.org/software/bison/
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Depends on: gettext
+
+name=bison
+version=3.8.2
+release=1
+source=(https://ftpmirror.gnu.org/gnu/$name/$name-$version.tar.xz)
+
+build() {
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+	--disable-nls
+
+    # Force LIBTEXTSTYLE to use dynamic -lpthread instead of the
+    # static libpthread.a that gnulib's linker-script-blind detection
+    # picked (see: undefined reference to __pointer_chk_guard_local)
+    sed -i 's|/usr/lib/libpthread\.a|-lpthread|' Makefile
+
+    make V=1
+    make DESTDIR=$PKG install
+
+    rm -r $PKG/usr/share/{doc,info}
+    rm $PKG/usr/share/bison/README.md
+}

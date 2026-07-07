@@ -40,8 +40,11 @@ d:util-linux
 d:pkgutils
 d:libwebp
 d:usbutils
+d:bison
+d:psmisc
 d:coreutils
 d:prt-get
+d:man-db
 d:llvm
 d:python3
 d:rc
@@ -228,6 +231,13 @@ f:0345c95004e4ce9329a157e612737360:usbutils/usb.ids.xz
 f:7d23bc565916ae465d24ba3c6d595ba8:usbutils/.footprint
 f:7a5cd743efe498ab6153f43e2c374332:usbutils/Pkgfile
 f:31a594cd76368f8c44fc4a1180556336:usbutils/.md5sum
+f:7cba55dee564b570ffeefc02fa0e6c37:bison/.footprint
+f:56babe55286780af5caea9e36161812e:bison/Pkgfile
+f:f1ad30baa503bd29ac72602db2fe2de3:bison/.md5sum
+f:301dd94576fb3a08fde2b7cbec7469eb:psmisc/.footprint
+f:5263b8a6beab387279abd43743470e30:psmisc/compat-statx.h
+f:e021629c465f833164092dc13d25cfc5:psmisc/Pkgfile
+f:876dc1271be6980075c09d7c85af4c5d:psmisc/.md5sum
 f:e70e6bccf3e2bc0299e64d39994f1c38:coreutils/.footprint
 f:e199c0769007bba61c43fd89ef3f80b8:coreutils/README
 f:3803e66b954ec01cbb1c304f931f6cdf:coreutils/Pkgfile
@@ -237,6 +247,9 @@ f:38124e30ec3f75a2fa89757b4c0733a0:prt-get/prt-get.conf
 f:ac750b56369121ca6aad64dd4c03671b:prt-get/prt-get.aliases
 f:479aa4f212dc8e47475b99758f3d66b1:prt-get/Pkgfile
 f:3d5dbbf41303e750e4a3eab67daea9c4:prt-get/.md5sum
+f:5855097449e7049bd84af1776d33631d:man-db/.footprint
+f:f680abf62dc574f98fb7f452ca1c8793:man-db/Pkgfile
+f:6436394266df8932cce7bf146dca5ed1:man-db/.md5sum
 f:700c9da1489f6413ae4c86eab03d6cf4:llvm/.footprint
 f:05612be5a6ad85d61b69251cdfd9608e:llvm/Pkgfile
 f:c8c8bb0d22830e23df525cc295a3c83b:llvm/.md5sum

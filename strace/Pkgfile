@@ -1,0 +1,28 @@
+# Description: SysTem call tracing utility (like trace, truss, etc)
+# URL: https://strace.io
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: elfutils
+
+name=strace
+version=7.1
+release=1
+source=(https://github.com/strace/strace/releases/download/v$version/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+
+  # strace's bundled uapi headers are missing time_types.h (needed by
+  # taskstats.h), and its posix_types.h predates the y2038 typedefs
+  # (__kernel_time64_t, __kernel_old_time_t) that time_types.h needs.
+  # Pull both from the same pinned LTS tag (v5.10, from strace 7.1's
+  # own era) to keep the bundled set internally consistent.
+  curl -sL -o bundled/linux/include/uapi/linux/time_types.h \
+    https://raw.githubusercontent.com/torvalds/linux/v5.10/include/uapi/linux/time_types.h
+  curl -sL -o bundled/linux/include/uapi/asm-generic/posix_types.h \
+    https://raw.githubusercontent.com/torvalds/linux/v5.10/include/uapi/asm-generic/posix_types.h
+
+  ./configure --prefix=/usr
+
+  make -j ${JOBS:-1}
+  make DESTDIR=$PKG install
+}

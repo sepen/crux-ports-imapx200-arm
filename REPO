@@ -45,7 +45,6 @@ d:psmisc
 d:coreutils
 d:elfutils
 d:prt-get
-d:man-db
 d:llvm
 d:python3
 d:rc
@@ -263,9 +262,6 @@ f:38124e30ec3f75a2fa89757b4c0733a0:prt-get/prt-get.conf
 f:ac750b56369121ca6aad64dd4c03671b:prt-get/prt-get.aliases
 f:479aa4f212dc8e47475b99758f3d66b1:prt-get/Pkgfile
 f:3d5dbbf41303e750e4a3eab67daea9c4:prt-get/.md5sum
-f:5855097449e7049bd84af1776d33631d:man-db/.footprint
-f:f680abf62dc574f98fb7f452ca1c8793:man-db/Pkgfile
-f:6436394266df8932cce7bf146dca5ed1:man-db/.md5sum
 f:700c9da1489f6413ae4c86eab03d6cf4:llvm/.footprint
 f:05612be5a6ad85d61b69251cdfd9608e:llvm/Pkgfile
 f:c8c8bb0d22830e23df525cc295a3c83b:llvm/.md5sum

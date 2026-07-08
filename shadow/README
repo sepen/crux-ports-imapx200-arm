@@ -1,0 +1,23 @@
+README for shadow
+
+
+IMPORTANT NOTES
+
+libxcrypt is intentionally NOT a build dependency here, even though it
+appears in shadow's upstream configure checks and in some reference
+Pkgfiles. glibc 2.22 still ships its own crypt() (verified via configure's
+"checking for crypt in -lcrypt... yes" against glibc's libcrypt.so.1), and
+this Pkgfile doesn't pass --with-bcrypt/--with-yescrypt, so shadow never
+calls into libxcrypt's extended API (crypt_gensalt, crypt_r, etc.). Adding
+libxcrypt here would only introduce an unnecessary libcrypt.so.1/.so.2
+SONAME collision with glibc for no functional gain.
+
+If bcrypt/yescrypt support is ever needed, this needs revisiting: add
+libxcrypt as a real dependency, pass --with-bcrypt/--with-yescrypt to
+configure, build libxcrypt with --disable-static and drop its unversioned
+libcrypt.so post-install so both libraries can coexist (glibc keeps serving
+libcrypt.so.1 for existing binaries, libxcrypt provides libcrypt.so.2 for
+anything that links against it explicitly). Also update ENCRYPT_METHOD in
+/etc/login.defs accordingly — it must stay SHA512 (or SHA256) as long as
+libxcrypt isn't in the picture, since glibc's crypt() can't produce
+yescrypt/bcrypt hashes.

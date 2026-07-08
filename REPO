@@ -5,7 +5,6 @@ d:man-pages
 d:gawk
 d:gcc
 d:menu-cache
-d:mlocate
 d:dhcpcd
 d:httpup
 d:bindutils
@@ -85,11 +84,6 @@ f:0eb1770b72260588774cb5e23a6e75b7:gcc/.md5sum
 f:1f89e0565116aa83dcb5eafbcafaca50:menu-cache/.footprint
 f:084ab41bbf1a15ff0d710146bf434714:menu-cache/Pkgfile
 f:0af5577c2daf0b26b8110cc0d87f1539:menu-cache/.md5sum
-f:7d67badc004a8ade29648c8449b479e4:mlocate/mlocate
-f:00947fd6d4e8c1316d4a7ff33b08b64e:mlocate/.footprint
-f:ba81e63d0d15d630e5feaecb066b202c:mlocate/updatedb.conf
-f:ad6e69ae0a71b5bae43cd255e9167ff0:mlocate/Pkgfile
-f:abce08aa7b0ec249333f60328d325724:mlocate/.md5sum
 f:7de353900a5c1cdd839f6cdbf20f0cfc:dhcpcd/.footprint
 f:78dfa7e9ac506c79fa732b8e4b70e9e4:dhcpcd/README
 f:0b056dd3e5a3e1eacb7c9b38f0641e4d:dhcpcd/rc.dhcpcd

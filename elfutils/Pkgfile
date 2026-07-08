@@ -1,0 +1,29 @@
+# Description: A collection of utilities to handle ELF objects.
+# URL: https://sourceware.org/elfutils/
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Depends on: bzip2 xz zlib
+
+name=elfutils
+version=0.195
+release=1
+source=(https://sourceware.org/$name/ftp/$version/$name-$version.tar.bz2)
+
+build() {
+    cd $name-$version
+
+    CFLAGS+=" -ffat-lto-objects" \
+    ./configure \
+        --prefix=/usr \
+        --program-prefix=eu- \
+        --enable-deterministic-archives \
+        --disable-debuginfod \
+        --disable-libdebuginfod \
+        --disable-nls
+
+    # Turn off -Werror for src/ — GCC 7 keeps flagging unused parameters here
+    # even where the code already marks them __attribute__((unused)).
+    sed -i 's/\$(if \$(\$(\*F)_no_Werror),,-Werror)/ /' src/Makefile
+
+    make
+    make DESTDIR=$PKG install
+}

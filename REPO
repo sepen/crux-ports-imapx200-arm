@@ -1,7 +1,6 @@
 d:gcc48-libmpc
 d:tar
 d:python3-setuptools
-d:man-pages
 d:gawk
 d:gcc
 d:menu-cache
@@ -71,9 +70,6 @@ f:d0423dfbde5a9292f3e82ce9e8ea89b5:tar/.md5sum
 f:b3da0ed1fd09677a4b6b00dd9bd88198:python3-setuptools/.footprint
 f:f63d9da79e724cf31672bacad3e3d21f:python3-setuptools/Pkgfile
 f:529af1c8c8ba5aa530160469b9a572b4:python3-setuptools/.md5sum
-f:bc2ad577b288fa4b1af7a3f831a12f55:man-pages/.footprint
-f:52929b5b660b57c3b11724444b194ae8:man-pages/Pkgfile
-f:ecd360cc20a2c10898c2270f20458e07:man-pages/.md5sum
 f:611bae70510b486ff4449c3db02ab246:gawk/.footprint
 f:06f55f0d7ce9973dce78a888589c5e89:gawk/Pkgfile
 f:1f0dc3fcf3fbcec305ee6f12501ff94c:gawk/.md5sum

@@ -223,7 +223,7 @@ f:e6d37048fd3de20cdd1d623eb0faa602:kbd/.footprint
 f:357e682e6d275bfde0bd417b93ba9382:kbd/Pkgfile
 f:addd6a780ee3f83ef0a3d4a95eea196f:kbd/.md5sum
 f:8ad397a3c12f3c09d2361933bc774127:util-linux/.footprint
-f:a1affa54d51b30a6fe1dbb2b8ec7ebf2:util-linux/Pkgfile
+f:1eb86f85be666d4c720505f08dc1d07a:util-linux/Pkgfile
 f:d478f7fe30496552555c0f1b3b6e8842:util-linux/.md5sum
 f:0e1717fd1eeb62d8fce0c23682e9b337:pkgutils/.footprint
 f:b812e898306175b51d3ab11d93bbc892:pkgutils/pkgmk.conf
@@ -262,7 +262,7 @@ f:700c9da1489f6413ae4c86eab03d6cf4:llvm/.footprint
 f:05612be5a6ad85d61b69251cdfd9608e:llvm/Pkgfile
 f:c8c8bb0d22830e23df525cc295a3c83b:llvm/.md5sum
 f:d6bdc8483d77b41d8675af4166f17c1a:python3/.footprint
-f:58e48f87323b2aee56f14318d792bf70:python3/Pkgfile
+f:0e3d3e381bcc68781e6e63208292a8a9:python3/Pkgfile
 f:40c3717bb62d89c7d99b301ea02d82b4:python3/.md5sum
 f:2a20bba8549f13cab9c6d84c1dbbfc7c:rc/no-devtmpfs.patch
 f:441c8f54e449ebb04236731ee6033784:rc/.footprint

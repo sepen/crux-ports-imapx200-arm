@@ -226,9 +226,9 @@ f:9623a770f7a9781272b8f30761cbe256:glibc/CVE-2015-8779.patch
 f:e6d37048fd3de20cdd1d623eb0faa602:kbd/.footprint
 f:357e682e6d275bfde0bd417b93ba9382:kbd/Pkgfile
 f:addd6a780ee3f83ef0a3d4a95eea196f:kbd/.md5sum
-f:38f1863d465d9302d148bd057ef99ea0:util-linux/.footprint
-f:3056ff444005b4e3c050e06e8b3fb86e:util-linux/Pkgfile
-f:398e77c32c7d984df1f88fcd7d770e59:util-linux/.md5sum
+f:8ad397a3c12f3c09d2361933bc774127:util-linux/.footprint
+f:a1affa54d51b30a6fe1dbb2b8ec7ebf2:util-linux/Pkgfile
+f:d478f7fe30496552555c0f1b3b6e8842:util-linux/.md5sum
 f:0e1717fd1eeb62d8fce0c23682e9b337:pkgutils/.footprint
 f:b812e898306175b51d3ab11d93bbc892:pkgutils/pkgmk.conf
 f:ad80d8e6df2714b750433d9344f3ee3b:pkgutils/Pkgfile

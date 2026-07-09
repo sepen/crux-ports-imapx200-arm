@@ -18,7 +18,6 @@ d:udev
 d:libpcre
 d:patch
 d:libfm-extra
-d:pciutils
 d:shadow
 d:cpk
 d:stella
@@ -136,9 +135,6 @@ f:c2bf59b812627f76c456ce7d8bb40358:patch/.md5sum
 f:30a5b8783d0a466d958a83edfffa3560:libfm-extra/.footprint
 f:8b966fce1d4c4555527b06ea03d46dfa:libfm-extra/Pkgfile
 f:84564e9cf7ea7efecbf6389e5cbe5fbd:libfm-extra/.md5sum
-f:d03dae40b2f698f6b3b6d0ee2cba58fc:pciutils/.footprint
-f:1ca34954624f7165f729f22b71478f48:pciutils/Pkgfile
-f:5cec7d32541cee6e4f4e2ab8e2b0fc9a:pciutils/.md5sum
 f:2840590040cfc8e547823e0310124200:shadow/usermod
 f:f54afe95ba7942263f3656b4056dc7e4:shadow/su
 f:8ff42911de6b941926a27aeb3bc90c6e:shadow/groupadd

@@ -1,7 +1,7 @@
 # Description: Python interpreter, version 3.
 # URL: https://www.python.org/
 # Maintainer: CRUX System Team, core-ports at crux dot nu
-# Depends on: bzip2 expat gdbm libffi libnsl libtirpc libxcrypt mpdecimal sqlite3 xz
+# Depends on: bzip2 expat gdbm libffi libtirpc mpdecimal sqlite3 xz
 
 name=python3
 version=3.12.13

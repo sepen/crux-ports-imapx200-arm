@@ -6,6 +6,7 @@ d:gcc
 d:menu-cache
 d:dhcpcd
 d:httpup
+d:harfbuzz
 d:bindutils
 d:binutils
 d:linux-pam
@@ -57,6 +58,7 @@ d:swig
 d:gcc48
 d:openssl
 d:gcc48-libmpfr
+d:shared-mime-info
 d:libfm
 f:7ffa9a185639460b9c82184afde8d8db:gcc48-libmpc/.footprint
 f:d35f3c4e6ddbb568dfd5f62f5c8097b0:gcc48-libmpc/Pkgfile
@@ -86,6 +88,9 @@ f:180d4a12ee4ef6cc09c744552d0e9e15:dhcpcd/.md5sum
 f:244d80213b48c8b5a5aca4c186f01f3d:httpup/.footprint
 f:df13c92747feac0d2c18bd8665d42767:httpup/Pkgfile
 f:de67ae098a8f8e3cb85dcf581e9a7f1e:httpup/.md5sum
+f:ab67de866d26fbb399dd6db76b6fb6b5:harfbuzz/.footprint
+f:96182af8693faeb79a4ff95f8d94a6bc:harfbuzz/Pkgfile
+f:13170e2551f965f6ced727f086a5c6ed:harfbuzz/.md5sum
 f:fd0ad59defbeeef14b2f85606ddfb22d:bindutils/.footprint
 f:c65559d1b4e50680bfcf559bc13f3f31:bindutils/README
 f:02730790111a209d1fd39743e6c6f300:bindutils/Pkgfile
@@ -317,6 +322,10 @@ f:79c55847cc831ebf6d0e4fb0574d46bc:gcc48-libmpfr/.footprint
 f:1360b827f03c7751fb9b5eabedc1fceb:gcc48-libmpfr/libmpfr-3.1.5-p2.patch.gz
 f:ac490eb0e1eeeb98d13f927c2ee011c2:gcc48-libmpfr/Pkgfile
 f:8e62bee19d6a8304bdd74dc7b70acfa7:gcc48-libmpfr/.md5sum
+f:8897e316a97e03c7219e0f6625331120:shared-mime-info/.footprint
+f:f354bfcc29359d9e72a5397fe6ef338c:shared-mime-info/README
+f:3d6e462d7dea2addf9b05810db3445e7:shared-mime-info/Pkgfile
+f:a5848acd798148b68ce8cbce68c09497:shared-mime-info/.md5sum
 f:e75218da90c828d68db25da955fe0dc1:libfm/.footprint
 f:ab9078d50ade207015fe0abdd1fa411b:libfm/Pkgfile
 f:84564e9cf7ea7efecbf6389e5cbe5fbd:libfm/.md5sum

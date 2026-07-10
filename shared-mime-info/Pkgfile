@@ -1,0 +1,43 @@
+# Description: Core database of common types
+# URL: https://freedesktop.org/Software/shared-mime-info
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: glib itstool
+
+name=shared-mime-info
+version=2.5.1
+release=1
+
+# https://gitlab.freedesktop.org/xdg/shared-mime-info/-/blob/master/xdgmime
+_xdgmimever=04ce4cd90cb3fa77d5348662de221a6f33b21b17
+
+source=(https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/$version/$name-$version.tar.bz2
+  https://gitlab.freedesktop.org/xdg/xdgmime/-/archive/$_xdgmimever/xdgmime-$_xdgmimever.tar.bz2)
+
+build() {
+  cp -r $SRC/xdgmime-$_xdgmimever $name-$version/subprojects/xdgmime
+
+  sed -i $SRC/$name-$version/src/update-mime-database.cpp \
+      -e 's/#include <filesystem>/#include <experimental\/filesystem>\nnamespace std { namespace filesystem = std::experimental::filesystem; }/'
+  sed -i $SRC/$name-$version/meson.build \
+      -e "/executable('update-mime-database'/,/)/ s/)/, link_args: ['-lstdc++fs'])/"
+
+  export LDFLAGS="$LDFLAGS -lstdc++fs"
+
+  meson setup $name-$version build \
+    --prefix=/usr \
+    --buildtype=plain \
+    --wrap-mode nodownload \
+    -D b_lto=true \
+    -D b_pie=true \
+    -D update-mimedb=false \
+    -D build-spec=false
+  meson compile -C build
+  DESTDIR=$PKG meson install -C build
+
+  # Builds the initial database
+  /usr/bin/env PKGSYSTEM_ENABLE_FSYNC=0 $PKG/usr/bin/update-mime-database $PKG/usr/share/mime
+
+  rm -r $PKG/usr/share/locale
+
+  find $PKG/usr/share/mime -type f -exec chmod 644 {} ';'
+}

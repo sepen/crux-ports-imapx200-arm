@@ -1,0 +1,13 @@
+README for shared-mime-info
+
+
+IMPORTANT NOTES
+
+    The upstream CRUX port fails to build as-is: update-mime-database.cpp
+    includes <filesystem>, but GCC 7.5.0 only ships the pre-standard Filesystem
+    TS (<experimental/filesystem>/std::filesystem::experimental), not std::
+    filesystem, despite reporting full C++17 support.
+
+    This overlay patches the source to use the experimental header/namespace
+    and adds -lstdc++fs to LDFLAGS, since those symbols live in a separate
+    library on this GCC version.

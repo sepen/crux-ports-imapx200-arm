@@ -1,0 +1,29 @@
+README for mesa
+
+
+OVERLAY NOTES
+
+This overlay deviates from the upstream CRUX `mesa` port. The stock Pkgfile
+builds a wide set of Gallium3D and Vulkan drivers (nouveau, r300, r600,
+radeonsi, svga, virgl, i915, plus optional d3d12/crocus/iris/zink/vulkan
+backends), auto-detected based on which optional dependencies happen to be
+installed.
+
+None of that applies here. This board (an ARM11/ARMv6 SoC, iMAPx200) has no
+dedicated GPU of any kind - no Adreno, Mali, VideoCore, Radeon, Intel, or
+Nvidia hardware - so every one of those drivers would be dead code, never
+loaded at runtime. Worse, building the `freedreno` Gallium driver (part of
+the upstream `auto` selection) triggers a GCC 7.5.0 internal compiler error
+("sorry, unimplemented: non-trivial designated initializers not supported")
+in `src/freedreno/fdl/fd6_view.cc` - a real GCC limitation, not a bug in
+Mesa's code, and not worth chasing for a driver this system will never use.
+
+This Pkgfile instead builds only `-Dgallium-drivers=llvmpipe` (CPU
+rasterization via LLVM JIT) with Vulkan and all vendor-specific
+drivers/layers disabled.
+
+
+All the `prt-get isinst ...`-driven conditional logic for optional hardware
+support (VA-API, lm_sensors, libunwind, Wayland, Vulkan drivers/layers,
+rusticl, d3d12) was removed for the same reason: none of it is reachable
+on hardware with no GPU and no plan to add Wayland.

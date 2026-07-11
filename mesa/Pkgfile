@@ -1,0 +1,44 @@
+# Description: Mesa 3D Graphics Library
+# URL: https://www.mesa3d.org/
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: elfutils libdrm libglvnd llvm python3-mako python3-pyyaml xorg-libxdamage xorg-libxrandr xorg-libxshmfence xorg-libxvmc xorg-libxxf86vm
+name=mesa
+version=26.1.4
+release=1
+source=(https://archive.mesa3d.org/$name-$version.tar.xz
+	patch_lp_bld_misc.py)
+
+
+build() {
+    # Fix Mesa build against LLVM 22.1.8's internal StringMap iterator API change
+    python3 $SRC/patch_lp_bld_misc.py $name-$version
+
+    # imapx200 has no dedicated GPU (no Adreno/Mali/VideoCore/Radeon/Intel/
+    # Nvidia), so only swrast (software rasterization on CPU) makes sense.
+    # This also sidesteps a GCC 7 ICE ("non-trivial designated initializers
+    # not supported") in src/freedreno/, which we'd otherwise never need.
+    printf '%s' "$version-$release" > $name-$version/VERSION
+    meson setup build $name-$version \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --buildtype=plain \
+        -D b_lto=false \
+        -D b_pie=true \
+        -D egl=enabled \
+        -D llvm=enabled \
+        -D shared-llvm=enabled \
+        -D gbm=enabled \
+        -D gles1=disabled \
+        -D gles2=enabled \
+        -D glx=dri \
+        -D gallium-drivers=llvmpipe \
+        -D platforms=x11 \
+        -D video-codecs= \
+        -D glvnd=enabled \
+        -D vulkan-drivers= \
+        -D vulkan-layers=
+    meson compile -C build -j ${JOBS:-1}
+    DESTDIR=$PKG meson install -C build
+    # indirect rendering symlink
+    ln -s libGLX_mesa.so.0 $PKG/usr/lib/libGLX_indirect.so.0
+}

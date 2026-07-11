@@ -49,7 +49,6 @@ d:llvm
 d:python3
 d:rc
 d:portdbc
-d:xterm
 d:mesa
 d:ports
 d:jsoncpp
@@ -280,9 +279,6 @@ f:3cb38a77be4e7ae112ca07ff9beff52d:portdbc/.footprint
 f:d07fcee92689506d21d516d5e0c16b1d:portdbc/Pkgfile
 f:6d369134e2aa07120bf99a215015c8e7:portdbc/fixups.patch
 f:c139b01a65075a67737c22c042963ca6:portdbc/.md5sum
-f:9342607c12e72d63c0b7abfe7d2a4da0:xterm/.footprint
-f:5a1c7eff31dc691f5d494f04a0b23ed9:xterm/Pkgfile
-f:f94f9e07099f622ce0853e4b04c29eb8:xterm/.md5sum
 f:1ca9abcac65cc49a6ff0ee8ed7ee5173:mesa/.footprint
 f:90feea938c684402a97b1b7451ca1f21:mesa/patch_lp_bld_misc.py
 f:b9fcb1e0eff163351b9640ff602b8227:mesa/README

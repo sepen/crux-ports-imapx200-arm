@@ -7,10 +7,12 @@ name=xorg-server
 version=21.1.24
 release=1
 source=(https://www.x.org/releases/individual/xserver/$name-$version.tar.xz
-	compat-reallocarray.h)
+	compat-reallocarray.h fbdevhw.patch)
 
 build() {
     export CFLAGS="$CFLAGS -include $SRC/compat-reallocarray.h"
+
+    patch -p0 -i $SRC/fbdevhw.patch
 
     meson setup $name-$version build \
         --prefix=/usr \

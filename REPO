@@ -263,9 +263,10 @@ f:38124e30ec3f75a2fa89757b4c0733a0:prt-get/prt-get.conf
 f:ac750b56369121ca6aad64dd4c03671b:prt-get/prt-get.aliases
 f:479aa4f212dc8e47475b99758f3d66b1:prt-get/Pkgfile
 f:3d5dbbf41303e750e4a3eab67daea9c4:prt-get/.md5sum
-f:700c9da1489f6413ae4c86eab03d6cf4:llvm/.footprint
-f:05612be5a6ad85d61b69251cdfd9608e:llvm/Pkgfile
-f:c8c8bb0d22830e23df525cc295a3c83b:llvm/.md5sum
+f:9c6a8f87eed458d948932e24c5411f60:llvm/.footprint
+f:d604214fc72e0cd3b00ea16b3cbee0a4:llvm/Pkgfile
+f:8656c27a903e00eeac0f916ab057ad77:llvm/install-prefix.patch
+f:e84fdb8d83f0d2899cfde04fc7b99d97:llvm/.md5sum
 f:d6bdc8483d77b41d8675af4166f17c1a:python3/.footprint
 f:0e3d3e381bcc68781e6e63208292a8a9:python3/Pkgfile
 f:40c3717bb62d89c7d99b301ea02d82b4:python3/.md5sum

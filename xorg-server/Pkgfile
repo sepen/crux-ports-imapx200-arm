@@ -1,0 +1,33 @@
+# Description: X Window System server
+# URL: https://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: libepoxy nettle xorg-bdftopcf xorg-font-util xorg-libpixman xorg-libxaw xorg-libxcomposite xorg-libxcursor xorg-libxcvt xorg-libxfont2 xorg-libxft xorg-libxinerama xorg-libxres xorg-libxtst xorg-mkfontscale xorg-xcb-util-keysyms xorg-xkbcomp
+
+name=xorg-server
+version=21.1.24
+release=1
+source=(https://www.x.org/releases/individual/xserver/$name-$version.tar.xz
+	compat-reallocarray.h)
+
+build() {
+    export CFLAGS="$CFLAGS -include $SRC/compat-reallocarray.h"
+
+    meson setup $name-$version build \
+        --prefix=/usr \
+        --libexecdir=/usr/lib/$name \
+        --localstatedir=/var \
+        --buildtype=plain \
+        --wrap-mode nodownload \
+        -D b_lto=false \
+        -D b_pie=true \
+        -D xkb_dir=/usr/share/X11/xkb \
+        -D xkb_output_dir=/var/lib/xkb \
+        -D suid_wrapper=true \
+        -D xorg=true
+
+    meson compile -C build -j ${JOBS:-1}
+    DESTDIR=$PKG meson install -C build
+
+    install -m 755 -d $PKG/etc/X11/xorg.conf.d
+    echo "needs_root_rights = yes" >> $PKG/etc/X11/Xwrapper.config
+}

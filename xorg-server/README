@@ -1,0 +1,25 @@
+README for xorg-server
+
+
+OVERLAY NOTES
+
+Two build issues on this glibc/toolchain combination:
+
+1. mi/micmap.c calls reallocarray(), which glibc only started declaring in
+   <stdlib.h> from 2.26 onward - glibc 2.22 predates it, so this becomes an
+   implicit-function-declaration error under -Werror. xorg-server already
+   bundles its own fallback (os/reallocarray.c) and links it in via meson's
+   HAVE_REALLOCARRAY check, so the symbol isn't actually missing - only the
+   prototype is. compat-reallocarray.h adds just the missing declaration
+   (not a new definition, to avoid clashing with the bundled one), injected
+   via -include in CFLAGS.
+
+2. Linking test/tests (the project's own unit tests, not the server itself
+   or any of its libraries - those all link fine) fails with "multiple
+   definition" errors for several micmap.c symbols. This is an LTO/static-
+   archive interaction: micmap.c.o is passed explicitly on the link line
+   and also lives inside mi/liblibxserver_mi.a, which is harmless without
+   LTO but becomes a duplicate-symbol error once whole-program LTO analysis
+   sees both copies. There's no meson option to skip building the test
+   suite in this version, so this overlay just disables LTO (-D b_lto=false).
+

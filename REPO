@@ -319,10 +319,11 @@ f:dd1cda8be87441ced41899fa5ad4bc4c:gcc48/gcc-4.8.5-gnueabihf.patch
 f:3180df81527404ceddf9090841b58706:gcc48/Pkgfile
 f:c640391e0a60044ca64681f972f25044:gcc48/.md5sum
 f:8e02c2d55acc3c90e4b77c3c09bcf41e:xorg-server/.footprint
+f:21082ff00b64c37f2a4d473280bd36a5:xorg-server/patch_fbdevhw.py
 f:9299a00779bc081f449f0f2920cd28d7:xorg-server/README
-f:0a60a843f4c532bdfca486465984e672:xorg-server/Pkgfile
+f:aa8c08f9c49f8051e1744a8f9ad06cc3:xorg-server/Pkgfile
 f:050133f9505564bea1910b66e1ad2830:xorg-server/compat-reallocarray.h
-f:5e40c7b6cbd67fb29ebffa98146c9f05:xorg-server/.md5sum
+f:9bc644c9ddbcfb1297c361444d8a3e43:xorg-server/.md5sum
 f:920a11da877e783a8feb1b730b4c7677:openssl/.footprint
 f:34ae64bcea4a1488d52a518909273f17:openssl/mksslcert.sh
 f:a9d4f3a9214b1fdcac2723136ee8d8a2:openssl/Pkgfile

@@ -1,36 +1,67 @@
 # Description: LLVM compiler backend
-# URL:         http://llvm.org/
-# Maintainer:  Thomas Penteker, tek at serverop dot de
-# Packager:    Tilman Sauerbeck, tilman at crux dot nu
-# Depends on:  python cmake
+# URL: https://llvm.org/
+# Maintainer: CRUX-ARM System Team, devel at crux-arm dot nu
+# Arch Maintainer: CRUX-ARM System Team, devel at crux-arm dot nu
+# Depends on: libxml2 ninja python3-setuptools
+# Optional: lld
 
 name=llvm
-version=3.9.1
-release=3
-source=(http://llvm.org/releases/$version/$name-$version.src.tar.xz)
+version=22.1.8
+release=1
+source=(https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/llvm-project-$version.src.tar.xz
+	install-prefix.patch)
 
 build() {
-  export CC=gcc
-  export CXX=g++
+    prt-get isinst ccache && export PATH="$(echo ${PATH} | awk -v RS=: -v ORS=: '/ccache/ {next} {print}' | sed 's/:*$//')"
 
-  cd $name-$version.src
+    grep -rl '#!.*python' | xargs sed -i '1s/python$/python3/'
 
-  mkdir build
-  cd build
+    patch -Np2 -d $name-project-$version.src/llvm -i $SRC/install-prefix.patch
 
-  cmake -DLLVM_TARGETS_TO_BUILD='ARM' \
-    -DLLVM_INCLUDE_EXAMPLES=0 \
-    -DLLVM_INCLUDE_TESTS=0 \
-    -DLLVM_BUILD_LLVM_DYLIB=1 \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr ..
+    cmake -S $name-project-$version.src/llvm -B build -G Ninja $PKGMK_LLVM \
+        -D CMAKE_INSTALL_PREFIX=/usr \
+        -D CMAKE_BUILD_TYPE=Release \
+        -D CMAKE_C_FLAGS_RELEASE="$CFLAGS" \
+        -D CMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS" \
+	-D LLVM_TARGETS_TO_BUILD="ARM" \
+        -D LLVM_BINUTILS_INCDIR=/usr/include \
+        -D LLVM_BUILD_LLVM_DYLIB=ON \
+        -D LLVM_LINK_LLVM_DYLIB=ON \
+        -D FFI_INCLUDE_DIR=/usr/include \
+        -D LLVM_BUILD_RUNTIME=ON \
+        -D LLVM_BUILD_EXTERNAL_COMPILER_RT=ON \
+        -D LLVM_ENABLE_FFI=ON \
+        -D LLVM_ENABLE_RTTI=ON \
+        -D LLVM_INCLUDE_UTILS=ON \
+        -D LLVM_INSTALL_UTILS=ON \
+        -D LLVM_ENABLE_PIC=ON \
+        -D LLVM_ENABLE_ZLIB=ON \
+        -D LLVM_ENABLE_ZSTD=ON \
+        -D LLVM_OPTIMIZED_TABLEGEN=ON \
+        -D LLVM_BUILD_TOOLS=ON \
+        -D LLVM_UTILS_INSTALL_DIR=/usr/bin \
+        -D LLVM_INCLUDE_EXAMPLES=OFF \
+        -D LLVM_INCLUDE_TESTS=OFF \
+        -D LLVM_ENABLE_OCAMLDOC=OFF \
+        -D LLVM_ENABLE_LIBCXX=OFF \
+        -D LLVM_ENABLE_LLD="$(prt-get isinst lld >/dev/null && echo ON || echo OFF)" \
+        -D LLVM_INCLUDE_BENCHMARKS=OFF \
+        -D LLVM_APPEND_VC_REV=OFF \
+        -Wno-dev
 
-  MAKEFLAGS="-j1" make
-  make DESTDIR=$PKG install
+    NINJA_STATUS="[1/2][%f/%t %es] " \
+    cmake --build build --target LLVM -j 2
+    NINJA_STATUS="[2/2][%f/%t %es] " \
+    cmake --build build -j 2
+    DESTDIR=$PKG cmake --install build
 
-  # multilib stub
-  #cp $PKG/usr/include/llvm/Config/llvm-config{,-64}.h
+    install -d $PKG/usr/lib/bfd-plugins
+    ln -s ../LLVMgold.so $PKG/usr/lib/bfd-plugins/
+    ln -s ../libLTO.so $PKG/usr/lib/bfd-plugins/
 
-  install -m 0644 $SRC/llvm-config.h $PKG/usr/include/llvm/Config/
-
+    /usr/bin/python3 $name-project-$version.src/llvm/utils/lit/setup.py build
+    /usr/bin/python3 $name-project-$version.src/llvm/utils/lit/setup.py install --prefix=/usr --root=$PKG
+    /usr/bin/python3 -m compileall -d $name-project-$version.src/llvm/utils/lit $PKG
+    /usr/bin/python3 -O -m compileall -d $name-project-$version.src/llvm/utils/lit $PKG
+    /usr/bin/python3 -OO -m compileall -d $name-project-$version.src/llvm/utils/lit $PKG
 }

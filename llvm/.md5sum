@@ -1,1 +1,2 @@
-3259018a7437e157f3642df80f1983ea  llvm-3.9.1.src.tar.xz
+8656c27a903e00eeac0f916ab057ad77  install-prefix.patch
+69065494ebcb1150b2a329c1b3db7584  llvm-project-22.1.8.src.tar.xz

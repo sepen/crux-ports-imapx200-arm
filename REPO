@@ -57,6 +57,7 @@ d:gcc48-libgmp
 d:mesa3d
 d:swig
 d:gcc48
+d:libjpeg-turbo
 d:xorg-server
 d:openssl
 d:gcc48-libmpfr
@@ -324,6 +325,9 @@ f:86496f42439bc4d39c9a4effe9ba170e:gcc48/.footprint
 f:dd1cda8be87441ced41899fa5ad4bc4c:gcc48/gcc-4.8.5-gnueabihf.patch
 f:3180df81527404ceddf9090841b58706:gcc48/Pkgfile
 f:c640391e0a60044ca64681f972f25044:gcc48/.md5sum
+f:04bfe83b567177ceb62c5a8be4ef3de4:libjpeg-turbo/.footprint
+f:05b80679753dfdad0a94ebcef960f7b7:libjpeg-turbo/Pkgfile
+f:4beb132145793ce5c365aed8e928c923:libjpeg-turbo/.md5sum
 f:8e02c2d55acc3c90e4b77c3c09bcf41e:xorg-server/.footprint
 f:e340a6ae9bee8e19ad3b96a7956ab720:xorg-server/fbdevhw.patch
 f:21082ff00b64c37f2a4d473280bd36a5:xorg-server/patch_fbdevhw.py

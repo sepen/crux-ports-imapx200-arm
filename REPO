@@ -325,6 +325,7 @@ f:dd1cda8be87441ced41899fa5ad4bc4c:gcc48/gcc-4.8.5-gnueabihf.patch
 f:3180df81527404ceddf9090841b58706:gcc48/Pkgfile
 f:c640391e0a60044ca64681f972f25044:gcc48/.md5sum
 f:8e02c2d55acc3c90e4b77c3c09bcf41e:xorg-server/.footprint
+f:e340a6ae9bee8e19ad3b96a7956ab720:xorg-server/fbdevhw.patch
 f:21082ff00b64c37f2a4d473280bd36a5:xorg-server/patch_fbdevhw.py
 f:9299a00779bc081f449f0f2920cd28d7:xorg-server/README
 f:aa8c08f9c49f8051e1744a8f9ad06cc3:xorg-server/Pkgfile

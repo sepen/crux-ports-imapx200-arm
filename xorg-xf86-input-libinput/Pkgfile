@@ -1,0 +1,20 @@
+# Description: X driver based on libinput
+# URL: https://xorg.freedesktop.org
+# Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
+# Depends on: libinput xorg-server
+
+name=xorg-xf86-input-libinput
+version=1.5.0
+release=1
+source=(https://www.x.org/releases/individual/driver/xf86-input-libinput-$version.tar.xz
+	compat-btn-stylus3.h)
+
+build() {
+    cd xf86-input-libinput-$version
+
+    export CFLAGS="$CFLAGS -include $SRC/compat-btn-stylus3.h"
+
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+}

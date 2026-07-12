@@ -1,0 +1,16 @@
+README for xorg-xf86-input-libinput
+
+
+OVERLAY NOTES
+
+The upstream build fails on this system's kernel headers: xf86libinput.c
+references BTN_STYLUS3 (linux/input-event-codes.h), a button code added to
+the kernel only around 2023 -- well after the kernel headers installed on
+this board were generated. GCC reports it as undeclared.
+
+This overlay adds compat-btn-stylus3.h, a small header defining just the
+missing constant (value 0x149, its stable upstream numeric value, verified
+against the kernel source), injected via `-include` in CFLAGS. This board's
+kernel will never actually emit a BTN_STYLUS3 event either way (it predates
+the code by even more), so the corresponding switch case in xf86libinput.c
+is simply dead code here -- it only needed to compile, not run.

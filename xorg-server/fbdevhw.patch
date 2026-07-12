@@ -1,0 +1,29 @@
+diff -purN xorg-server-21.1.24.orig/hw/xfree86/fbdevhw/fbdevhw.c xorg-server-21.1.24/hw/xfree86/fbdevhw/fbdevhw.c
+--- xorg-server-21.1.24.orig/hw/xfree86/fbdevhw/fbdevhw.c	2026-07-08 01:35:09.000000000 +0000
++++ xorg-server-21.1.24/hw/xfree86/fbdevhw/fbdevhw.c	2026-07-11 22:54:03.122732904 +0000
+@@ -329,15 +329,21 @@ fbdev_open(int scrnIndex, const char *de
+         return -1;
+     }
+ 
+-    /* only touch non-PCI devices on this path */
++    /* only touch non-PCI devices on this path.
++     * Note: readlink() failing (e.g. ENOENT) just means this fb has no
++     * "device" symlink at all -- a virtual/bus-less framebuffer (as found
++     * on some embedded SoCs), not a PCI device. That case must NOT be
++     * rejected here; only an actual "bus/pci" match should be. */
+     {
+         char buf[PATH_MAX] = {0};
+         char *sysfs_path = NULL;
+         char *node = strrchr(dev, '/') + 1;
+ 
+-        if (asprintf(&sysfs_path, "/sys/class/graphics/%s/device/subsystem", node) < 0 ||
+-            readlink(sysfs_path, buf, sizeof(buf) - 1) < 0 ||
+-            strstr(buf, "bus/pci")) {
++        if (asprintf(&sysfs_path, "/sys/class/graphics/%s/device/subsystem", node) < 0) {
++            close(fd);
++            return -1;
++        }
++        if (readlink(sysfs_path, buf, sizeof(buf) - 1) >= 0 && strstr(buf, "bus/pci")) {
+             free(sysfs_path);
+             close(fd);
+             return -1;

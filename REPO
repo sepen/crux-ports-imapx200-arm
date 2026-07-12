@@ -8,6 +8,7 @@ d:dhcpcd
 d:httpup
 d:harfbuzz
 d:bindutils
+d:xorg-xf86-input-libinput
 d:binutils
 d:linux-pam
 d:pcmanfm
@@ -97,6 +98,11 @@ f:c65559d1b4e50680bfcf559bc13f3f31:bindutils/README
 f:02730790111a209d1fd39743e6c6f300:bindutils/Pkgfile
 f:cff1835cbed0990fb429276f896a98ec:bindutils/.md5sum
 f:e7dbe5f98d1df6c23c73bde78ec79787:bindutils/utils.patch
+f:b6f74bc97ccaeb77eb05c57b284555a1:xorg-xf86-input-libinput/.footprint
+f:29c5a47663bcffebb2c31659fa4121bc:xorg-xf86-input-libinput/README
+f:2bc550adbda525389a22e9ddf7dcc8fd:xorg-xf86-input-libinput/Pkgfile
+f:a27301e7d1b97155dfd167b459cfdf4f:xorg-xf86-input-libinput/compat-btn-stylus3.h
+f:ba363cb6f60a8f9d35493f3ef1b2e05b:xorg-xf86-input-libinput/.md5sum
 f:9ce4d46b7437e97239a93ba9620e4a8a:binutils/.footprint
 f:974535abd42a091d0161906b3b5a0b61:binutils/Pkgfile
 f:934db1a56518531601c4242044a03635:binutils/.md5sum

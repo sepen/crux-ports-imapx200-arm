@@ -15,6 +15,7 @@ d:pcmanfm
 d:cmake
 d:wireless-tools
 d:librsvg-compat
+d:mpv
 d:libusb
 d:udev
 d:libpcre
@@ -46,6 +47,7 @@ d:psmisc
 d:coreutils
 d:elfutils
 d:prt-get
+d:libplacebo
 d:llvm
 d:python3
 d:rc
@@ -130,6 +132,11 @@ f:61896a8322c5f22b630ebc8c9c5e622a:librsvg-compat/post-install
 f:c024158fd609ff37ba4789c23ad12c06:librsvg-compat/README
 f:da23a5c9063b9b000f0e7e463d36a9d9:librsvg-compat/Pkgfile
 f:4f59b431355f55a1dd8ac135d359e8aa:librsvg-compat/.md5sum
+f:e7823782079ffa8f308d483293730c9e:mpv/.footprint
+f:33b56c8dd6147f4cb4cd771dcb0c2af2:mpv/README
+f:b73af20d9a177ef8046ab5a0a4ada91d:mpv/Pkgfile
+f:d221b10227d135c318ac0a9bd8b90c01:mpv/compat-ff-profile.h
+f:42028b26cbd6b9f2dfb91fb01120012e:mpv/.md5sum
 f:e4ffb05202a3d8278081982fbcb342e4:libusb/.footprint
 f:4e471d090171c3dfccb826474c1d2e3b:libusb/Pkgfile
 f:c8e04a930e08f7f3aae0b3ecdf2a169f:libusb/.md5sum
@@ -271,6 +278,12 @@ f:38124e30ec3f75a2fa89757b4c0733a0:prt-get/prt-get.conf
 f:ac750b56369121ca6aad64dd4c03671b:prt-get/prt-get.aliases
 f:479aa4f212dc8e47475b99758f3d66b1:prt-get/Pkgfile
 f:3d5dbbf41303e750e4a3eab67daea9c4:prt-get/.md5sum
+f:9d4c9af850f4acc424a1c5948aca26a8:libplacebo/.footprint
+f:e3bc9968977b59eeb96261045380b88d:libplacebo/compat-charconv.h
+f:7db086832b7395cd7a8e499f9a6392ee:libplacebo/README
+f:c9004fdcd506cd3d4e34d4fb03995233:libplacebo/Pkgfile
+f:e945e77c8762c9a2352d63d7e99464bc:libplacebo/patch_convert_cc.py
+f:850b206f86cee091cde304904a70c451:libplacebo/.md5sum
 f:9c6a8f87eed458d948932e24c5411f60:llvm/.footprint
 f:d604214fc72e0cd3b00ea16b3cbee0a4:llvm/Pkgfile
 f:8656c27a903e00eeac0f916ab057ad77:llvm/install-prefix.patch

@@ -34,6 +34,7 @@ d:ninja
 d:wpa_supplicant
 d:u-boot-tools
 d:libarchive
+d:fzf
 d:openssh
 d:glibc
 d:kbd
@@ -216,6 +217,10 @@ f:2a5fd95226657d82e115e7414be28345:u-boot-tools/.md5sum
 f:b55d3b7eb4eb9ed8f4a113bbdfc3dd2d:libarchive/.footprint
 f:b06d1a74c4cac58c51f498087e2f4622:libarchive/Pkgfile
 f:139331e514cbdbffeaf6558e94180dcf:libarchive/.md5sum
+f:496a499933ccb72eb7079c420ce776e4:fzf/.footprint
+f:1b6673a1911dcf5614a3c618c69669be:fzf/README
+f:919a2445916afaa52fd9484b1d04eb3d:fzf/Pkgfile
+f:b915f7d6434ba3e877eeb560784aa722:fzf/.md5sum
 f:672f0ed66338d1e605e3055916333ccd:openssh/.footprint
 f:bf0717aadb81760a6ee3834e5be0d139:openssh/sshd.pam
 f:54b26376003c119663c04db32a7da1db:openssh/sshd.rc

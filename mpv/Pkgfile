@@ -1,7 +1,7 @@
 # Description: General Purpose video player based on MPlayer and mplayer2
 # URL: https://mpv.io/
 # Maintainer: Jose Beneyto, sepen at crux-arm dot nu
-# Depends on: ffmpeg libass xorg-libx11 xorg-libxscrnsaver xorg-libext xorg-libxinerama xorg-libxpresent xorg-libxscrnsaver
+# Depends on: ffmpeg libass xorg-libx11 xorg-libxscrnsaver xorg-libxext xorg-libxinerama xorg-libxpresent xorg-libxscrnsaver
 # Optional: libdvdnav libbluray libcdio-paranoia libsdl2 pulseaudio sndio
 
 name=mpv

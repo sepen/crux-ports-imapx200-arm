@@ -1,0 +1,62 @@
+# Description: Reusable library for GPU-accelerated video/image rendering primitives
+# URL: https://github.com/haasn/libplacebo
+# Maintainer: Jose Beneyto, sepen at crux-arm dot nu
+# Depends on: lcms2 python3-jinja2 vulkan-headers
+name=libplacebo
+version=6.338.2
+release=1
+source=(https://github.com/haasn/$name/archive/v$version/$name-$version.tar.gz
+        compat-charconv.h patch_convert_cc.py)
+build() {
+    sed -i $name-$version/meson.build \
+        -e 's|c++20|c++17|g'
+
+    # See patch_convert_cc.py for details (GCC 7 lacks C++20/<charconv>/
+    # <version>/std::to_chars-from_chars for integers/__VA_OPT__ support)
+    python3 $SRC/patch_convert_cc.py $name-$version
+
+    # GCC 7's libstdc++ has neither <charconv> nor <version> (both only
+    # became usable in later GCC releases). convert.cc's SFINAE checks
+    # (has_std_to_chars/has_std_from_chars) just need these headers to
+    # exist syntactically to correctly detect "not available" and fall
+    # through to the fallback paths patched in above.
+    mkdir -p $SRC/compat-include
+    touch $SRC/compat-include/version
+    cp $SRC/compat-charconv.h $SRC/compat-include/charconv
+    export CXXFLAGS="$CXXFLAGS -I$SRC/compat-include"
+
+    # The GitHub tarball doesn't include git submodules, so fast_float
+    # (the header-only fallback library convert.cc's float/double path
+    # needs) is missing. meson.build just checks for this directory on
+    # disk (src/meson.build: fs.is_dir('../3rdparty/fast_float/include')),
+    # no subproject/wrap mechanism involved. fast_float is NOT a single
+    # header -- fast_float.h pulls in several internal headers (e.g.
+    # float_common.h) -- so fetch the whole release tarball.
+    # TODO: pin to the exact commit libplacebo's .gitmodules references,
+    # once confirmed, instead of a fast_float release tag.
+    curl -sL https://github.com/fastfloat/fast_float/archive/refs/tags/v6.1.1.tar.gz \
+        -o fast_float.tar.gz
+    mkdir -p fast_float_extract
+    tar xf fast_float.tar.gz -C fast_float_extract --strip-components=1
+    mkdir -p $name-$version/3rdparty/fast_float/include
+    cp -r fast_float_extract/include/fast_float \
+        $name-$version/3rdparty/fast_float/include/
+
+    meson setup build $name-$version \
+        --prefix=/usr \
+        --buildtype=plain \
+        --wrap-mode nodownload \
+        -D b_lto=false \
+        -D b_pie=true \
+        -D vulkan=disabled \
+        -D opengl=disabled \
+        -D d3d11=disabled \
+        -D glslang=disabled \
+        -D shaderc=disabled \
+        -D dovi=disabled \
+        -D gl-proc-addr=disabled \
+        -D demos=false \
+        -D tests=false
+    meson compile -C build -j ${JOBS:-1}
+    DESTDIR="$PKG" meson install -C build
+}

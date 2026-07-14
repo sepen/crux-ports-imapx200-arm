@@ -1,0 +1,35 @@
+README for libplacebo
+
+
+OVERLAY NOTES
+
+mpv >= 0.37 has a hard, unconditional dependency on libplacebo. This board
+has no GPU acceleration at all (no Vulkan, glx disabled in Xorg), so this
+package exists purely to satisfy that build-time check — mpv is built with
+vulkan/d3d11/gl/egl all disabled and never actually uses it.
+ 
+Pinned to **6.338.2** (mpv's minimum accepted version): newer releases (7.x)
+unconditionally require C++20, which GCC 7.5.0 doesn't support at all. All
+GPU backends and shader compilers are disabled (`vulkan`, `opengl`, `d3d11`,
+`glslang`, `shaderc`, `dovi`, `gl-proc-addr` → disabled) — libplacebo builds
+fine this way, with only limited functionality retained.
+ 
+Even so, `src/convert.cc` needed GCC 7 fixes:
+- `<charconv>`/`<version>` don't exist in this libstdc++ → `compat-charconv.h`
+  declares dummy `std::to_chars`/`from_chars` overloads so the SFINAE
+  detection in convert.cc correctly falls back instead of hard-erroring;
+  `<version>` gets an empty stub.
+- No integer fallback existed for `to_chars`/`from_chars` (only float/double
+  had one) → added snprintf/strtoll-based ones.
+- `__VA_OPT__` (C23) → rewritten as `, ##__VA_ARGS__`.
+`patch_convert_cc.py` overwrites the whole file with the fixed version
+(simpler and more reliable than incremental patching after several rounds
+of getting brace-matching wrong).
+ 
+Two things missing from the GitHub tarball (no git submodules included):
+- **fast_float** (header-only fallback lib) — fetched from its own release
+  tarball into `3rdparty/fast_float/`. TODO: pin to the exact commit
+  libplacebo's `.gitmodules` references instead of an independent tag.
+- **vulkan-headers** — needed just for type definitions in
+  `src/vulkan/stubs.c`, even with Vulkan disabled. Headers-only package,
+  no loader/driver/GPU dependency.

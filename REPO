@@ -34,7 +34,6 @@ d:ninja
 d:wpa_supplicant
 d:u-boot-tools
 d:libarchive
-d:fzf
 d:openssh
 d:glibc
 d:kbd
@@ -217,10 +216,6 @@ f:2a5fd95226657d82e115e7414be28345:u-boot-tools/.md5sum
 f:b55d3b7eb4eb9ed8f4a113bbdfc3dd2d:libarchive/.footprint
 f:b06d1a74c4cac58c51f498087e2f4622:libarchive/Pkgfile
 f:139331e514cbdbffeaf6558e94180dcf:libarchive/.md5sum
-f:496a499933ccb72eb7079c420ce776e4:fzf/.footprint
-f:1b6673a1911dcf5614a3c618c69669be:fzf/README
-f:919a2445916afaa52fd9484b1d04eb3d:fzf/Pkgfile
-f:b915f7d6434ba3e877eeb560784aa722:fzf/.md5sum
 f:672f0ed66338d1e605e3055916333ccd:openssh/.footprint
 f:bf0717aadb81760a6ee3834e5be0d139:openssh/sshd.pam
 f:54b26376003c119663c04db32a7da1db:openssh/sshd.rc
@@ -251,9 +246,9 @@ f:8ad397a3c12f3c09d2361933bc774127:util-linux/.footprint
 f:1eb86f85be666d4c720505f08dc1d07a:util-linux/Pkgfile
 f:d478f7fe30496552555c0f1b3b6e8842:util-linux/.md5sum
 f:0e1717fd1eeb62d8fce0c23682e9b337:pkgutils/.footprint
-f:b812e898306175b51d3ab11d93bbc892:pkgutils/pkgmk.conf
+f:c11dd24ea796a4c19f98ad6c4aed2d8e:pkgutils/pkgmk.conf
 f:ad80d8e6df2714b750433d9344f3ee3b:pkgutils/Pkgfile
-f:09909b0b6e3f40a2cdb74b6721115133:pkgutils/.md5sum
+f:33ebe867afc399f3518f8cc2d977af63:pkgutils/.md5sum
 f:43c41a42e7efa748d39fed7285f9232e:strace/.footprint
 f:30bdbee41f038f6339cdb91cd5c113f7:strace/Pkgfile
 f:dc5916d65ae5d1a0625e7c2be9c616f4:strace/.md5sum

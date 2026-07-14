@@ -1,0 +1,47 @@
+# Description: a general-purpose command-line fuzzy finder
+# URL: https://github.com/junegunn/fzf/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: go
+# Optional: tmux
+
+name=fzf
+version=0.74.0
+release=1
+source=(https://github.com/junegunn/fzf/archive/v$version/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  mkdir "$PKGMK_SOURCE_DIR/gopath" || true
+  export GOPATH="$PKGMK_SOURCE_DIR/gopath"
+  export PATH="${GOPATH}/bin:$PATH"
+  export GOCACHE="${PKGMK_SOURCE_DIR}/gocache"
+  export GOMODCACHE="${PKGMK_SOURCE_DIR}/gomodcache"
+
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export CGO_LDFLAGS="${LDFLAGS}"
+
+  # Go defaults to GOARM=7 (assumes VFPv3), but this board's ARM1136/VFP11
+  # core only has VFPv2 -- a GOARM=7 binary crashes with SIGILL at runtime.
+  # GOARM=6 matches this CPU (ARMv6 + VFPv1/VFPv2).
+  export GOOS=linux
+  export GOARCH=arm
+  export GOARM=6
+
+  go build \
+    -trimpath \
+    -buildmode=pie \
+    -mod=readonly \
+    -modcacherw \
+    -ldflags "-s -w -linkmode=external"
+
+  prt-get isinst bash-completion && install -Dm644 shell/completion.bash \
+    $PKG/usr/share/bash-completion/completions/fzf
+  prt-get isinst zsh && install -Dm644 shell/completion.zsh \
+    $PKG/usr/share/zsh/site-functions/_fzf
+  prt-get isinst tmux && install -Dm755 bin/fzf-tmux -t $PKG/usr/bin/
+
+  install -Dm755 $name $PKG/usr/bin/$name
+}

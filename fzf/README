@@ -1,0 +1,14 @@
+README for fzf
+
+
+OVERLAY NOTES
+
+fzf is written in Go, which defaults to GOARM=7 (assumes VFPv3) when
+GOARM isn't set explicitly. This board's CPU is an ARM1136/VFP11 core
+(ARMv6, VFPv1/VFPv2 only, no VFPv3) — a GOARM=7 binary crashes with
+SIGILL on startup here.
+ 
+This overlay adds `GOOS=linux GOARCH=arm GOARM=6` before the `go build`
+step to match this CPU. Any other Go-based port on this board needs the
+same fix, since Go gives no build-time warning for the mismatch — the
+binary just crashes at runtime.

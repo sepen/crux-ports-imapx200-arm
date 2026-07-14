@@ -1,0 +1,15 @@
+README for libjpeg-turbo
+
+
+OVERLAY NOTES
+
+The upstream build fails to link its own test/utility binaries (tjunittest,
+tjcomp, tjdecomp, tjtran): they link only against libturbojpeg.so, which
+itself needs __fpclassifyf (glibc's backing symbol for the fpclassify()
+macro on floats, part of libm, not libc). Since these targets don't link
+-lm explicitly and the linker here doesn't resolve transitive shared-library
+dependencies automatically, __fpclassifyf is left undefined.
+
+This overlay adds -lm globally via LDFLAGS instead of patching each
+target_link_libraries() call in CMakeLists.txt individually -- simpler and
+harmless, since linking libm unnecessarily has no downside.

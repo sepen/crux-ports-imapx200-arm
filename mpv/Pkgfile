@@ -1,0 +1,50 @@
+# Description: General Purpose video player based on MPlayer and mplayer2
+# URL: https://mpv.io/
+# Maintainer: Jose Beneyto, sepen at crux-arm dot nu
+# Depends on: ffmpeg libass xorg-libx11 xorg-libxscrnsaver xorg-libext xorg-libxinerama xorg-libxpresent xorg-libxscrnsaver
+# Optional: libdvdnav libbluray libcdio-paranoia libsdl2 pulseaudio sndio
+
+name=mpv
+version=0.41.0
+release=1
+source=(https://github.com/mpv-player/mpv/archive/v$version/$name-$version.tar.gz
+	compat-ff-profile.h)
+
+build() {
+  [ -e /usr/lib/libdvdnav.so ] && PKGMK_MPV="-D dvdnav=enabled"
+  [ -e /usr/lib/libcdio_paranoia.so ] && PKGMK_MPV+=" -D cdda=enabled"
+  [ -e /usr/lib/libSDL2.so ] && PKGMK_MPV+=" -D sdl2-audio=enabled -D sdl2-video=enabled"
+  [ -e /usr/lib/libsndio.so ] && PKGMK_MPV+=" -D sndio=enabled"
+ 
+  # FF_PROFILE_DTS_HD_HRA/MA (and a couple of ARIB profile macros) were
+  # removed from this FFmpeg in favor of AV_PROFILE_*; mpv 0.36.0 predates
+  # that rename, so alias the old names back via a small compat header.
+  export CFLAGS="$CFLAGS -include $SRC/compat-ff-profile.h" 
+
+  # See README for why vulkan/d3d11/gl and others are disabled on this board
+  meson setup $name-$version build $PKGMK_MPV \
+    --prefix=/usr \
+    --buildtype=plain \
+    --wrap-mode nodownload \
+    -D b_lto=false \
+    -D b_pie=true \
+    -D vulkan=disabled \
+    -D d3d11=disabled \
+    -D gl=disabled \
+    -D egl=disabled \
+    -D egl-x11=disabled \
+    -D gbm=disabled \
+    -D drm=disabled \
+    -D vaapi=disabled \
+    -D vdpau=disabled \
+    -D wayland=disabled \
+    -D x11=enabled \
+    -D xv=enabled
+
+  ninja -C build -j ${JOBS:-1}
+  DESTDIR="$PKG" meson install -C build
+
+  [ -e /usr/share/bash-completion/bash_completion ] || rm -rf "$PKG"/usr/share/bash-completion
+  [ -x /usr/bin/fish ] || rm -rf "$PKG"/usr/share/fish
+  [ -x /usr/bin/zsh ] || rm -rf "$PKG"/usr/share/zsh
+}

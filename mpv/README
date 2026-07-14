@@ -1,0 +1,12 @@
+README for mpv
+
+
+OVERLAY NOTES
+
+This board has no GPU acceleration at all (no Vulkan, glx disabled in Xorg — see xorg-server notes),
+so vulkan/d3d11/gl/egl/gbm/drm/vaapi/vdpau/ wayland/cuda are all disabled here.
+x11 and xv stay enabled — those are the actual outputs.
+Use `mpv --vo=x11` or `--vo=xv`; any GPU-based vo will never work on this hardware.
+ 
+mpv depends on libplacebo, but the upstream version can't be used as-is on this board — see the
+libplacebo overlay and its own README for why and what was done there.

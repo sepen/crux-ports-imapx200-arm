@@ -9,6 +9,7 @@ d:harfbuzz
 d:xorg-xcb-util-xrm
 d:glibc
 d:cmake
+d:lld
 d:menu-cache
 d:python3-setuptools
 d:libpcre
@@ -120,6 +121,10 @@ f:c0e4a708857a0a50b9a3d1a5cc315763:glibc/CVE-2015-8777.patch
 f:beaaca2bc98e843934cc7e924c24ab08:cmake/.footprint
 f:333ed9555d230d11d99ddc6c7d06dd29:cmake/.md5sum
 f:2c875581e377a9a16f749cbef3cf3cb2:cmake/Pkgfile
+f:c4fda3a1f8fb40e13337d1bac091b368:lld/.footprint
+f:856c6e388c411975a955156776d73bfe:lld/0002-PATCH-lld-Import-compact_unwind_encoding.h-from-libu.patch
+f:13e6e56d41dd4785c6d629f2d60ca05b:lld/.md5sum
+f:b40fcf800bd9117bc772cc2b86e72bad:lld/Pkgfile
 f:1f89e0565116aa83dcb5eafbcafaca50:menu-cache/.footprint
 f:0af5577c2daf0b26b8110cc0d87f1539:menu-cache/.md5sum
 f:084ab41bbf1a15ff0d710146bf434714:menu-cache/Pkgfile

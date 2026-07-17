@@ -35,6 +35,7 @@ d:clang
 d:libjpeg-turbo
 d:wpa_supplicant
 d:pcmanfm
+d:rust-bin
 d:mesa3d
 d:libnl
 d:coreutils
@@ -234,6 +235,9 @@ f:6e88732c3fa18b7347973e4393da6ab1:pcmanfm/.footprint
 f:b9c0e9bbd62a1bd707d2d53a6fcdd546:pcmanfm/post-install
 f:39541c0eec33bd98335db55cb854e747:pcmanfm/.md5sum
 f:343a98a2d33f973dae19bd81a918d936:pcmanfm/Pkgfile
+f:c7b0ad7e3af848fae1b609de8c8e0cca:rust-bin/.footprint
+f:729154d15d7107c48af8e926101d3acc:rust-bin/.md5sum
+f:5965196bf88219ba77c784d7e47b8733:rust-bin/Pkgfile
 f:855ae854257fdd970708e8d0b313c6ec:mesa3d/.footprint
 f:6c161f67ac9bb9c3e27bb4adabc93bfe:mesa3d/.md5sum
 f:dd995d4d49a1e348b6acb6b89b966984:mesa3d/Pkgfile

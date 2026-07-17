@@ -31,6 +31,7 @@ d:bindutils
 d:mesa
 d:gcc48
 d:rc
+d:clang
 d:libjpeg-turbo
 d:wpa_supplicant
 d:pcmanfm
@@ -216,6 +217,9 @@ f:441c8f54e449ebb04236731ee6033784:rc/.footprint
 f:2a20bba8549f13cab9c6d84c1dbbfc7c:rc/no-devtmpfs.patch
 f:96ddd38a6a92b63fc36cd35050f2fb84:rc/.md5sum
 f:4c4a89b90e7e930cc8ae2d78312dbd00:rc/Pkgfile
+f:3bb7a7abe2b0714a548b15e19727d69d:clang/.footprint
+f:e404e6a9286bde260a8f853297704c6c:clang/.md5sum
+f:117ca2348c39f3f7445c313451f29733:clang/Pkgfile
 f:04bfe83b567177ceb62c5a8be4ef3de4:libjpeg-turbo/.footprint
 f:05630729dd9f89e9a404a1073e3381b5:libjpeg-turbo/README
 f:4beb132145793ce5c365aed8e928c923:libjpeg-turbo/.md5sum

@@ -1,0 +1,25 @@
+# Description: the Rust language, binary version
+# URL: https://rust-lang.org/
+# Maintainer: Jose Beneyto, sepen at crux-arm dot nu
+# Depends on: llvm
+
+_triplet=arm-unknown-linux-gnueabi
+
+name=rust-bin
+version=1.97.1
+release=1
+source=(https://static.rust-lang.org/dist/rust-$version-${_triplet}.tar.gz)
+
+build() {
+  cd rust-$version-${_triplet}
+  ./install.sh --prefix=/usr --destdir="$PKG" --disable-ldconfig
+
+  # clean up junk files
+  mv "$PKG"/usr/libexec/* "$PKG"/usr/lib
+  rmdir "$PKG"/usr/libexec
+  rm -rf "$PKG"/usr/share/doc
+  [ -f /etc/bash_completion ] || rm -rf "$PKG"/usr/etc/bash_completion.d
+  [ -x /usr/bin/zsh ] || rm -rf "$PKG"/usr/share/zsh
+  rm -f "$PKG"/usr/lib/rustlib/install.log \
+        "$PKG"/usr/lib/rustlib/uninstall.sh
+}

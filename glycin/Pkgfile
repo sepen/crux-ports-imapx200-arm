@@ -1,0 +1,46 @@
+# Description: Sandboxed and extendable image loading
+# URL: https://gitlab.gnome.org/GNOME/glycin
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Depends on: bubblewrap fontconfig glib-introspection lcms2 libseccomp rust
+# Optional: gtk4 libheif libjxl librsvg
+
+name=glycin
+version=2.1.5
+release=1
+source=(https://gitlab.gnome.org/GNOME/glycin/-/archive/$version/glycin-$version.tar.bz2
+	compat-glibc.c)
+
+build() {
+  prt-get isinst sccache && export RUSTC_WRAPPER=/usr/bin/sccache
+  [[ ! -e $PKGMK_SOURCE_DIR/rust ]] && mkdir $PKGMK_SOURCE_DIR/rust
+
+  PKGMK_GLYCIN_LOADERS='glycin-image-rs'
+  prt-get isinst gtk4 && PKGMK_GLYCIN+=' -D libglycin-gtk4=true' || PKGMK_GLYCIN+=' -D libglycin-gtk4=false'
+  prt-get isinst libheif && PKGMK_GLYCIN_LOADERS+=',glycin-heif'
+  prt-get isinst libjxl && PKGMK_GLYCIN_LOADERS+=',glycin-jxl'
+  prt-get isinst librsvg && PKGMK_GLYCIN_LOADERS+=',glycin-svg'
+
+  # glibc (2.22) predates memfd_create (2.27) and close_range (2.34),
+  # which glycin's Rust code calls via FFI expecting the system libc to
+  # provide them. Implement them via direct syscalls and link them in.
+  gcc -c -O2 $SRC/compat-glibc.c -o $SRC/compat-glibc.o
+  ar rcs $SRC/libcompat_glibc.a $SRC/compat-glibc.o
+  export RUSTFLAGS="-C link-arg=$SRC/libcompat_glibc.a"
+
+  meson setup $name-$version build $PKGMK_GLYCIN \
+    --prefix=/usr \
+    --libexecdir=lib/$name \
+    --buildtype=plain \
+    --wrap-mode nodownload \
+    -D b_lto=true \
+    -D b_pie=true \
+    -D test_skip_install=false \
+    -D tests=false \
+    -D glycin-loaders=true \
+    -D glycin-thumbnailer=false \
+    -D loaders="$PKGMK_GLYCIN_LOADERS" \
+    -D vapi=false
+
+  meson compile -C build
+  DESTDIR=$PKG meson install -C build
+}

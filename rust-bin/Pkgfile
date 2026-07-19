@@ -3,7 +3,7 @@
 # Maintainer: Jose Beneyto, sepen at crux-arm dot nu
 # Depends on: llvm
 
-_triplet=arm-unknown-linux-gnueabi
+_triplet=arm-unknown-linux-gnueabihf
 
 name=rust-bin
 version=1.97.1

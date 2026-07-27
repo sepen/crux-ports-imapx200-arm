@@ -1,0 +1,26 @@
+# Description: A cargo subcommand to build and install C-ABI compatibile dynamic and static libraries
+# URL: https://github.com/lu-zero/cargo-c/
+# Maintainer: Tim Biermann, tbier at posteo dot de
+# Depends on: libgit2 rust
+
+name=cargo-c
+version=0.10.24
+release=1
+source=(https://github.com/lu-zero/cargo-c/archive/v$version/$name-$version.tar.gz
+  https://github.com/lu-zero/cargo-c/releases/download/v$version/Cargo.lock)
+renames=(SKIP $name-$version-cargo.lock)
+
+build() {
+  prt-get isinst sccache && export RUSTC_WRAPPER=/usr/bin/sccache
+  [[ ! -e $PKGMK_SOURCE_DIR/rust ]] && mkdir $PKGMK_SOURCE_DIR/rust
+
+  cp $SRC/$name-$version-cargo.lock $name-$version/Cargo.lock
+
+  export CARGO_BUILD_JOBS=1
+  export RUSTFLAGS="$RUSTFLAGS -C codegen-units=16 -C lto=off"
+
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')" --manifest-path $name-$version/Cargo.toml
+  cargo build --release --frozen --manifest-path $name-$version/Cargo.toml
+
+  find $SRC/$name-$version/target/release -maxdepth 1 -type f -executable -exec install -D -m755 -t $PKG/usr/bin {} +
+}

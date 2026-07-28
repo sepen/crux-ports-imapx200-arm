@@ -43,6 +43,7 @@ d:mpv
 d:pcmanfm
 d:lld
 d:wpa_supplicant
+d:i2c-tools
 d:python3-setuptools
 d:libplacebo
 d:dhcpcd
@@ -254,6 +255,9 @@ f:52c95945c36511718efd746f01570a83:wpa_supplicant/Pkgfile
 f:5b505ff68474564b9eb44b04445ba730:wpa_supplicant/wpa_supplicant
 f:832c9aa0f46d94f07a13718a2b80c8ef:wpa_supplicant/README
 f:41f56e82611a4c6df27dd45cd05adf48:wpa_supplicant/.footprint
+f:17f8313569f076c7f6e1b1f38895fb9b:i2c-tools/.md5sum
+f:68c030308b76301052673a32baf5280a:i2c-tools/Pkgfile
+f:6fb04acce682d2fe20a01d4cfc5a88ce:i2c-tools/.footprint
 f:529af1c8c8ba5aa530160469b9a572b4:python3-setuptools/.md5sum
 f:f63d9da79e724cf31672bacad3e3d21f:python3-setuptools/Pkgfile
 f:b3da0ed1fd09677a4b6b00dd9bd88198:python3-setuptools/.footprint

@@ -3,7 +3,7 @@
 # Maintainer: CRUX Xorg Team, xorg-ports at crux dot nu
 # Depends on: elfutils libdrm libglvnd llvm python3-mako python3-pyyaml xorg-libxdamage xorg-libxrandr xorg-libxshmfence xorg-libxvmc xorg-libxxf86vm
 name=mesa
-version=26.1.4
+version=26.1.5
 release=1
 source=(https://archive.mesa3d.org/$name-$version.tar.xz
 	patch_lp_bld_misc.py)

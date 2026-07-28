@@ -1,0 +1,13 @@
+# Description: I2C Tools for Linux
+# URL: https://i2c.wiki.kernel.org/index.php/I2C_Tools
+# Maintainer: Jose Beneyto, sepen at crux-arm dot nu
+
+name=i2c-tools
+version=4.4
+release=1
+source=(https://www.kernel.org/pub/software/utils/$name/$name-$version.tar.xz)
+
+build() {
+    cd $name-$version
+    make PREFIX=/usr DESTDIR=$PKG install
+}
